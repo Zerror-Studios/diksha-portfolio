@@ -90,7 +90,7 @@ const PlaygroundWork = () => {
                                         ))}
                                     </div>
                                 </div>
-                                <Image src={item.img} alt={item.title} fill className='proj_img cover' />
+                                <Image src={item.img} alt={item.title} fill className='proj_img scale-125 cover' />
                             </div>
                             <h4 className='text-choc text-2xl mt-6 leading-tight font-semibold'>{item.title}</h4>
                         </div>
