@@ -1,0 +1,42 @@
+@font-face {
+  font-family: manjari-regular;
+  src: url(../../public/fonts/Manjari/Manjari-Regular.ttf);
+}
+@font-face {
+  font-family: manjari-bold;
+  src: url(../../public/fonts/Manjari/Manjari-Bold.ttf);
+}
+@font-face {
+  font-family: playfair;
+  src: url(../../public/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: playfair-italic;
+  src: url(../../public/fonts/Playfair_Display/PlayfairDisplay-Italic-VariableFont_wght.ttf);
+}
+html,
+body {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: manjari-regular, sans-serif;
+  font-display: swap;
+}
+.font-semibold{
+  font-family: manjari-bold, sans-serif;
+  font-display: swap;
+}
+.playfair {
+  font-family: playfair, sans-serif;
+  font-display: swap;
+}
+.playfair-italic {
+  font-family: playfair-italic, sans-serif;
+  font-display: swap;
+}
+
+@media (min-width: 1440px) {
+  html,
+  body {
+    font-size: 16px;
+  }
+}
