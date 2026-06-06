@@ -8,8 +8,8 @@ const page = () => {
     <>
         <PlaygroundHero/>
         <PlaygroundWork/>
-        <div className="w-full text-center pb-32 text-choc font-semibold pt-12">
-          <h3 className='text-3xl'>Messy in the best way, and still worth returning to.</h3>
+        <div className="w-full text-center pb-16 md:pb-32 text-choc font-semibold pt-8 padding md:pt-12">
+          <h3 className=' text-2xl md:text-3xl'>Messy in the best way, and still worth returning to.</h3>
         </div>
     </>
   )

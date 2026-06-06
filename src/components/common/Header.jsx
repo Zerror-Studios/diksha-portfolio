@@ -25,7 +25,7 @@ const Header = () => {
   return (
     <div className="w-full py-5 absolute top-0 left-0 h-fit padding z-50 flex justify-between ">
       <Link href="/">
-        <p className={`playfair text-3xl leading-none ${isChoc ? "text-choc" : "text-white"}`}>Diksha <span className='playfair-italic'>Ghanshani</span></p>
+        <p className={`playfair text-2xl md:text-3xl leading-none ${isChoc ? "text-choc" : "text-white"}`}>Diksha <span className='playfair-italic'>Ghanshani</span></p>
       </Link>
 
       <div className="flex flex-col">

@@ -345,10 +345,10 @@ export default function ReferenceImages() {
         return () => ctx.revert();
     }, []);
 
-    useGSAP(()=>{
+    useGSAP(() => {
         gsap.to(".grid_anim", {
-            opacity:1,
-            duration:1
+            opacity: 1,
+            duration: 1
         })
     })
 
@@ -357,9 +357,9 @@ export default function ReferenceImages() {
             ref={sectionRef}
             className="relative h-[200vh] w-full"
         >
-            <div className="sticky top-0 h-screen overflow-hidden">
+            <div className="sticky top-0 h-screen! overflow-hidden">
                 {/* Heading */}
-                <h1 className="absolute inset-0  -translate-x-1 flex items-center justify-center gap-4 text-2xl font-bold text-choc">
+                <h1 className="absolute inset-0  -translate-x-1 flex max-sm:flex-col text-center items-center justify-center gap-4 md:text-2xl font-bold text-choc">
                     <span className="translate-y-0.75">A mixed bag of experiments, arranged less </span>
                     <span className="h-3 w-3 bg-choc" />
                     <span className="translate-y-0.75">like a portfolio and more like a studio table.</span>
@@ -433,7 +433,7 @@ export default function ReferenceImages() {
                     {/* Top Layer */}
                     <ul
                         ref={topGridRef}
-                        className="absolute top-1/2 z-20 grid w-[400vw] -translate-y-1/2 grid-cols-4 md:w-full"
+                        className=" max-sm:hidden absolute top-1/2 z-20 grid w-[400vw] -translate-y-1/2 grid-cols-4 md:w-full"
                     >
                         {images.map((image, index) => (
                             <li

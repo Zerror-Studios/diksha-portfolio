@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import { useGSAP } from '@gsap/react';
@@ -42,13 +42,14 @@ const heroAiData = [
 ];
 
 const Hero = () => {
-
+  const promptRef = useRef(null);
   const [isExpand, setIsExpand] = useState(false);
   const [activeAnswer, setActiveAnswer] = useState("");
   const [hasAnswer, setHasAnswer] = useState(false);
   const answerRef = useRef(null);
 
   useGSAP(() => {
+    if (window.innerWidth < 750) return
     gsap.to([".hero_bg_img"], {
       y: 200,
       ease: "none",
@@ -79,113 +80,130 @@ const Hero = () => {
 
       const tl = gsap.timeline();
 
-    tl.from(split.lines, {
-      opacity: 0,
-      y: 40,
-      duration: 0.8,
-      stagger: 0.08,
-      ease: "power3.out",
-    })
+      tl.from(split.lines, {
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        stagger: 0.08,
+        ease: "power3.out",
+      })
 
-      // wait 5 seconds
-      .to(
-        split.lines,
-        {
-          yPercent: -100,
-          opacity: 0,
-          duration: 0.8,
-          stagger: 0.05,
-          ease: "power3.inOut",
-        },
-        "+=15"
-      )
+        // wait 5 seconds
+        .to(
+          split.lines,
+          {
+            yPercent: -100,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.05,
+            ease: "power3.inOut",
+          },
+          "+=15"
+        )
 
-      // bring hero title back
-      .fromTo(
-        ".hero_title",
-        {
-          y: 100,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-        },
-        "-=0.2"
-      )
+        // bring hero title back
+        .fromTo(
+          ".hero_title",
+          {
+            y: 100,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+          },
+          "-=0.2"
+        )
 
-      // cleanup states
-      .call(() => {
-        setHasAnswer(false);
-        setActiveAnswer("");
+        // cleanup states
+        .call(() => {
+          setHasAnswer(false);
+          setActiveAnswer("");
+        });
+
+      return () => {
+        tl.kill();
+        split.revert();
+      };
+    },
+    { dependencies: [activeAnswer] }
+  );
+
+  const handleQuestionClick = (answer) => {
+    setIsExpand(false);
+
+    if (!hasAnswer) {
+      gsap.to(".hero_title", {
+        opacity: 0,
+        y: -100,
+        duration: 0.8,
+        ease: "power3.inOut",
+        onComplete: () => {
+          setHasAnswer(true);
+          setActiveAnswer(answer);
+        },
       });
 
-    return () => {
-      tl.kill();
-      split.revert();
+      return;
+    }
+
+    setActiveAnswer(answer);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        promptRef.current &&
+        !promptRef.current.contains(event.target)
+      ) {
+        setIsExpand(false);
+      }
     };
-  },
-  { dependencies: [activeAnswer] }
-);
 
-const handleQuestionClick = (answer) => {
-  setIsExpand(false);
+    document.addEventListener("mousedown", handleClickOutside);
 
-  if (!hasAnswer) {
-    gsap.to(".hero_title", {
-      opacity: 0,
-      y: -100,
-      duration: 0.8,
-      ease: "power3.inOut",
-      onComplete: () => {
-        setHasAnswer(true);
-        setActiveAnswer(answer);
-      },
-    });
-
-    return;
-  }
-
-  setActiveAnswer(answer);
-};
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
-      <div className=" hero_section w-full h-screen relative overflow-hidden">
+      <div className=" hero_section w-full h-screen! relative overflow-hidden">
         <Image fill src="/images/homepage/hero_bg.png" alt="hero" className=" hero_bg_img cover absolute brightness-80 inset-0" />
-        <div className="w-full h-screen center relative z-10">
-          <h1 className=' hero_title  text-white  text-center leading-12  text-7xl'>
-            <div className='flex items-center font-semibold'> Designing AI  <img src="/icons/stars.svg" alt="" className='w-20 -translate-y-4 mx-5' /> first products </div>
+        <div className="w-full h-screen! center relative z-10">
+          <h1 className=' hero_title  text-white  text-center leading-5 md:leading-12 text-2xl  md:text-5xl lg:text-7xl'>
+            <div className='flex items-center font-semibold'> Designing AI  <img src="/icons/stars.svg" alt="" className=' w-6 md:w-20 -translate-y-2 md:-translate-y-4 mx-2 md:mx-5' /> first products </div>
             <div className='playfair-italic font-thin'> with human depth</div>
           </h1>
 
           {hasAnswer && (
-            <div className="absolute text-white leading-none text-3xl w-[80vw] text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className="absolute text-white leading-none text-base md:text-3xl w-[95vw] md:w-[80vw] text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
               <p key={activeAnswer} ref={answerRef}>
                 {activeAnswer}
               </p>
             </div>
           )}
 
-          <div className={` cursor-pointer absolute bottom-10 left-1/2 -translate-x-1/2 transition-all duration-300  ${isExpand ? "w-[60vw] bg-[#100E0D35] p-10" : "w-[40vw] p-0 bg-white/20"}   border  text-white border-white/50  backdrop-blur-lg rounded-xl`}>
+          <div ref={promptRef} className={` cursor-pointer absolute bottom-10 left-1/2 -translate-x-1/2 transition-all duration-300  ${isExpand ? " w-[90vw] md:w-[60vw] bg-[#100E0D35] p-4 md:p-10" : " w-[90vw] md:w-[40vw] p-0 bg-white/20"}   border  text-white border-white/50  backdrop-blur-lg rounded-xl`}>
             <div className={`h-0 overflow-hidden transition-all duration-300  ${isExpand ? "h-78 opacity-100" : "opacity-0"}`}>
-              <h4 className='text-2xl font-semibold'>Quick Prompt //</h4>
+              <h4 className='md:text-2xl font-semibold'>Quick Prompt //</h4>
               <div className="space-y-2 py-5">
                 {heroAiData.map((item, index) => (
                   <div
                     key={index}
                     onClick={() => handleQuestionClick(item.answer)}
-                    className="border border-white/20 hover:bg-white/40 transition-all duration-300 cursor-pointer w-fit p-2 rounded-lg pb-1.5 flex items-center gap-x-2"
+                    className=" max-sm:text-sm border border-white/20 hover:bg-white/40 transition-all duration-300 cursor-pointer w-fit p-2 rounded-lg pb-1.5 flex items-center gap-x-2"
                   >
                     • {item.question}
                   </div>
                 ))}
               </div>
             </div>
-            <div onClick={() => setIsExpand(!isExpand)} className={`w-full p-3 flex items-center justify-between rounded-xl font-semibold transition-all duration-300  ${isExpand ? "bg-white text-choc" : "bg-transparent"}`}>
-              <p className='translate-y-0.5'>Ask AI about my design process </p>
-              <button className={`flex gap-x-2 items-center font-semibold text-[#713F1E] rounded-lg bg-white px-4 py-2 leading-none text-sm transition-all duration-300  ${isExpand ? "bg-choc text-white" : "bg-transparent"}`}><p className='translate-y-0.75'>Search</p>
+            <div onClick={() => setIsExpand(!isExpand)} className={`w-full p-2 md:p-3 flex items-center justify-between rounded-xl font-semibold transition-all duration-300  ${isExpand ? "bg-white text-choc" : "bg-transparent"}`}>
+              <p className=' max-sm:text-sm translate-y-0.5'>Ask AI about my design process </p>
+              <button className={` max-sm:text-sm flex gap-x-2 items-center font-semibold text-[#713F1E] rounded-lg bg-white px-4 py-2 leading-none text-sm transition-all duration-300  ${isExpand ? "bg-choc text-white" : "bg-transparent"}`}><p className='translate-y-0.75'>Search</p>
                 <div className='relative'>
                   <img src="/icons/ai_btn_search.svg" alt="" />
                   <img src="/icons/ai_btn_search_white.svg" className={`absolute inset-0 opacity-0 transition-all duration-300  ${isExpand ? "opacity-100" : ""}`} alt="" />

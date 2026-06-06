@@ -18,6 +18,8 @@ const icons = [
 const GuitarSection = () => {
 
     useGSAP(() => {
+        if (window.innerWidth < 750) return
+
         gsap.fromTo([".guitar_bg_img"], {
             y: -400
         }, {
@@ -34,11 +36,11 @@ const GuitarSection = () => {
 
     return (
         <>
-            <div className=" guitar_section w-full h-[200vh] relative text-choc overflow-hidden">
+            <div className=" guitar_section w-full h-screen! md:h-[200vh]! relative text-choc overflow-hidden">
 
-                <div className="w-full grid grid-cols-3 p-20 absolute z-10">
+                <div className="w-full md:grid grid-cols-3 p-20 absolute z-10">
                     <div className="col-span-2"></div>
-                    <div className="font-semibold space-y-5">
+                    <div className=" max-sm:text-center font-semibold space-y-5">
                         <div className="">
                             <h6 className='playfair text-xl mb-1'>Empathy</h6>
                             <p className=' leading-none'>I design with people at <br /> the heart.</p>
@@ -58,20 +60,20 @@ const GuitarSection = () => {
                     </div>
                 </div>
 
-                <div className="w-full grid grid-cols-3 bottom-0 p-20 absolute z-10">
+                <div className="w-full md:grid grid-cols-3 bottom-0 p-5 md:p-20 absolute z-10">
                     <div className="col-span-2">
-                        <div className=" w-fit grid grid-cols-4 gap-2">
+                        <div className=" w-full md:w-fit grid grid-cols-4 gap-2">
 
                             {icons.map((item, i) => (
-                                <div key={i} className="size-20 hover:bg-[#713F1E] backdrop-blur-md transition-all duration-150 rounded-full bg-[#713F1E30] center">
-                                    <img src={item} alt="" />
+                                <div key={i} className=" size-18 md:size-20 hover:bg-[#713F1E] backdrop-blur-md transition-all duration-150 rounded-full bg-[#713F1E30] center">
+                                    <img src={item} alt="" className='max-sm:w-8' />
                                 </div>
                             ))}
                         </div>
 
                     </div>
-                    <div className="font-semibold space-y-5">
-                        <p className='text-lg'>I design with empathy understanding people, not just problems while blending systems thinking,</p>
+                    <div className=" max-sm:mt-5 font-semibold space-y-2 md:space-y-5">
+                        <p className=' md:text-lg leading-tight'>I design with empathy understanding people, not just problems while blending systems thinking,</p>
                         <button className='bg-choc text-white px-6 py-3 pb-1.5 rounded-lg'>
                             <p>Read More</p>
                         </button>

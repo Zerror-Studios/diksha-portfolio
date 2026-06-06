@@ -41,6 +41,7 @@ const PlaygroundWork = () => {
 
     useGSAP(
         () => {
+                if(window.innerWidth<750) return
             gsap.utils.toArray(".proj_img").forEach((img) => {
                 gsap.fromTo(
                     img,
@@ -62,16 +63,16 @@ const PlaygroundWork = () => {
     );
     return (
         <>
-            <div className="container py-24 space-y-16">
-                <div className="w-full grid grid-cols-6 items-end">
+            <div className="container py-12 md:py-24 space-y-5 md:space-y-16">
+                <div className="w-full md:grid grid-cols-6 items-end">
                     <div className="col-span-4">
-                        <h2 className='text-gray text-6xl leading-14 font-thin '>Creativity Crafted for <br />  <span className='text-choc playfair-italic'>Modern Brands</span></h2>
+                        <h2 className='text-gray text-3xl md:text-6xl  leading-none md:leading-14 font-thin '>Creativity Crafted for <br />  <span className='text-choc playfair-italic'>Modern Brands</span></h2>
                     </div>
-                    <div className="col-span-2 pb-3 font-semibold leading-tight text-gray">
+                    <div className="max-sm:mt-2 col-span-2 pb-3 font-semibold leading-tight text-gray">
                         <p>Creativity crafted for modern brands through thoughtful design, strategic thinking, and meaningful experiences that connect with people authentically.</p>
                     </div>
                 </div>
-                <div ref={container} className="grid grid-cols-3 gap-x-5">
+                <div ref={container} className="grid grid-cols-1 gap-y-8 md:grid-cols-3 gap-x-5">
                     {projectsData.map((item, i) => (
                         <div key={i} className=" proj_paren relative">
                             <div className="w-full aspect-square rounded-xl overflow-hidden relative">
@@ -92,7 +93,7 @@ const PlaygroundWork = () => {
                                 </div>
                                 <Image src={item.img} alt={item.title} fill className='proj_img scale-125 cover' />
                             </div>
-                            <h4 className='text-choc text-2xl mt-6 leading-tight font-semibold'>{item.title}</h4>
+                            <h4 className='text-choc text-xl md:text-2xl mt-3 md:mt-6 leading-tight font-semibold'>{item.title}</h4>
                         </div>
                     ))}
                 </div>

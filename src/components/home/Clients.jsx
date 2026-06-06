@@ -14,8 +14,8 @@ const marquee = [
 
 const Clients = () => {
   return (
-    <div className='py-24 container'>
-        <div className=" w-full grid grid-cols-8">
+    <div className=' py-12 md:py-24 container'>
+        <div className=" w-full max-sm:space-y-2  md:grid grid-cols-8">
             <div className="col-span-6">
                 <h4 className='text-choc font-semibold text-2xl leading-none'>Trusted Across <br /> Industries</h4>
             </div>
@@ -24,14 +24,14 @@ const Clients = () => {
             </div>
         </div>
 
-        <div className="mt-16 h-52 flex items-center relative border border-[#713F1E10]">
+        <div className=" mt-10 md:mt-16 h-36 md:h-52 flex items-center relative border border-[#713F1E10]">
             <div className="size-3 absolute -top-1.5 -left-1.5 z-99 bg-choc"></div>
             <div className="size-3 absolute -bottom-1.5 -left-1.5 z-99 bg-choc"></div>
             <div className="size-3 absolute -top-1.5 -right-1.5 z-99 bg-choc"></div>
             <div className="size-3 absolute -bottom-1.5 -right-1.5 z-99 bg-choc"></div>
-            <Marquee gradient gradientColor='#F9F7EC' className='h-full'>
+            <Marquee gradient gradientColor='#F9F7EC' gradientWidth={100} className='h-full'>
                 {marquee.map((item, index) => (
-                    <img key={index} src={item} className='mr-20' alt="" />
+                    <img key={index} src={item} className=' mr-10 max-sm:w-32 md:mr-20' alt="" />
                 ))}
             </Marquee>
         </div>

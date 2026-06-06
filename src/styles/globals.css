@@ -28,10 +28,6 @@ button {
   height: 100%;
   object-fit: cover;
 }
-.h-screen {
-  height: 100vh !important;
-  height: 100svh !important;
-}
 .container {
   position: relative;
   width: 100%;
