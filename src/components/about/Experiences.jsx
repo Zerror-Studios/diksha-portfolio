@@ -44,7 +44,7 @@ const Experiences = () => {
     return (
         <div ref={containerRef} className=' h-[200vh] relative' >
             <div className=" container sticky! top-0  h-screen! py-12 md:py-24 flex flex-col justify-between  overflow-hidden">
-                <img className=' absolute z-[-1] w-full h-full exp_pr_img cover inset-0' src="/images/aboutpage/experiences_bg.png" alt="" />
+                <img className=' absolute z-[-1] w-full h-full exp_pr_img cover inset-0' src="/images/aboutpage/experiences_bg.png" alt="img" />
                 <div className="">
                     <h2 className=' text-3xl md:text-6xl  text-white leading-none md:leading-12 font-semibold '>Building Through <br /><span className=' playfair-italic font-thin'>Experiences</span></h2>
                     <p className='md:text-xl text-white md:w-[40%] mt-5  leading-tight'>A playful childhood moment captured with joy, innocence, and timeless memories that continue to inspire warmth, happiness, and beautiful storytelling.</p>
@@ -53,7 +53,7 @@ const Experiences = () => {
                 <div className="w-full bg-[#FFFEF7] items-stretch md:flex gap-x-20  p-6  md:p-10 rounded-xl">
                     <div className="md:w-[30%]">
                         <p className=' text-choc  text-3xl md:text-4xl'>01</p>
-                        <p className=' text-3xl md:text-4xl mt-5 leading-none text-gray'>Design Patent & <br /><span className=' text-choc playfair-italic'>product thinking</span></p>
+                        <p className=' text-3xl md:text-4xl mt-5 leading-none text-gray'>Design Patent & <br /><span className='  playfair-italic'>product thinking</span></p>
                     </div>
                     <div className=" w-full max-sm:h-px max-sm:my-5 md:w-px  bg-[#713F1E30]"></div>
                     <div className="  leading-tight md:w-[70%] space-y-5 opacity-80">
@@ -82,7 +82,7 @@ const Experiences = () => {
                     <div className=" container w-full  items-stretch md:flex gap-x-20 py-12 md:py-24 rounded-xl">
                         <div className="md:w-[30%] text-choc">
                             <p className='   text-3xl md:text-4xl'>03</p>
-                            <p className=' text-3xl md:text-4xl mt-5 leading-none text-gray'>Designing for <br /><span className=' text-choc playfair-italic'>healthcare impact</span></p>
+                            <p className=' text-3xl md:text-4xl mt-5 leading-none text-gray'>Designing for <br /><span className='  playfair-italic'>healthcare impact</span></p>
                         </div>
                         <div className="w-full max-sm:h-px max-sm:my-5 md:w-px  bg-[#713F1E30]"></div>
                         <div className=" max-sm:mt-5 leading-tight md:w-[70%] space-y-5 opacity-80">

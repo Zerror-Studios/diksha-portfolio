@@ -76,9 +76,9 @@ const KeyProjects = () => {
             <div className="container py-12 md:py-24 space-y-5 md:space-y-16">
                 <div className="w-full max-sm:space-y-2 md:grid grid-cols-6 items-end">
                     <div className="col-span-4">
-                        <h2 className='text-gray text-3xl md:text-6xl  leading-none md:leading-14 font-thin '>Projects built <br /> with <span className='text-choc playfair-italic'>intention.</span></h2>
+                        <h2 className='text-gray text-3xl md:text-6xl  leading-none md:leading-14 font-thin '>Projects built <br /> with <span className=' playfair-italic'>intention.</span></h2>
                     </div>
-                    <div className="col-span-2 pb-3 font-semibold leading-tight text-gray">
+                    <div className="col-span-2 pb-3 md:font-semibold leading-tight text-gray">
                         <p>Projects built with intention, shaped through thoughtful strategy, human understanding, and a strong focus on creating meaningful real-world impact.</p>
                     </div>
                 </div>
@@ -88,7 +88,7 @@ const KeyProjects = () => {
 
                             <div className="w-full absolute bottom-0 pointer-events-none h-[30%] bg-linear-to-b from-transparent to-black z-10 "></div>
 
-                            <Image fill src={item.img} className={` proj_img cover`} alt="" />
+                            <Image fill src={item.img} className={` proj_img cover`} alt="img" />
                             <div className=" absolute bottom-0 p-5 md:p-10  z-10 w-full flex justify-between max-sm:flex-col md:items-end">
                                 <div className=" space-y-2 md:space-y-5">
                                     <div className="font-semibold flex gap-x-1">

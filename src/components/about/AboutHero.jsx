@@ -52,7 +52,7 @@ const AboutHero = () => {
         <>
             <div className=" about_hero w-full relative">
                 <div className=" diksha_img w-full h-screen! fixed inset-0 z-[-1]">
-                    <Image src="/images/aboutpage/diksha_pic.png" alt="" fill className='object-cover' />
+                    <Image src="/images/aboutpage/diksha_pic.png" alt="img" fill className='object-cover' />
                 </div>
                 <div className=" abt_hero_bg w-full h-screen! center text-center bg-[#F9F7EC00]">
                     <h1 className=' abt_hero_bg_title   z-10 text-white leading-none  text-4xl  md:text-7xl' >Hello, I'm <br /> <span className='playfair-italic'>Diksha Ghanshani</span></h1>
@@ -63,7 +63,7 @@ const AboutHero = () => {
             </div>
             <div className=" clip_paren w-full h-screen! relative overflow-hidden bg-[#F9F7EC]">
                 <div className="w-full  absolute z-10">
-                    <img src="/images/aboutpage/abt_clip.svg" className='w-full ' alt="" />
+                    <img src="/images/aboutpage/abt_clip.svg" className='w-full ' alt="img" />
                 </div>
 
                 <Image src="/images/aboutpage/abt_img.png" alt='loading' fill className=' clip_inn_img cover' />

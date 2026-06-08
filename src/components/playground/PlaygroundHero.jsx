@@ -4,12 +4,13 @@ import { useEffect, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const images = Array.from({ length: 16 }, (_, i) => ({
     id: i,
-    src: `https://picsum.photos/800/450?random=${i + 1}`,
+    src: `/images/playground/img${i + 1}.png`,
 }));
 
 const innerIndexes = [5, 6, 9, 10];
@@ -403,7 +404,7 @@ export default function ReferenceImages() {
                                     >
                                         <div className="relative overflow-hidden">
                                             <div
-                                                className="image-inner relative"
+                                                className="image-inner aspect-video w-full relative"
                                                 ref={(el) => {
                                                     if (!el) return;
 
@@ -412,10 +413,11 @@ export default function ReferenceImages() {
                                                     bottomRefs.current[index].image = el;
                                                 }}
                                             >
-                                                <img
+                                                <Image
+                                                    fill
                                                     src={image.src}
-                                                    alt=""
-                                                    className="aspect-[467/263] w-full object-cover"
+                                                    alt="playground_img"
+                                                    className="cover"
                                                 />
                                             </div>
                                         </div>
@@ -462,7 +464,7 @@ export default function ReferenceImages() {
                                             }}
                                         >
                                             <div
-                                                className="relative overflow-hidden"
+                                                className="relative overflow-hidden aspect-video w-full"
                                                 ref={(el) => {
                                                     if (!el) return;
 
@@ -470,10 +472,11 @@ export default function ReferenceImages() {
                                                     topRefs.current[index].image = el;
                                                 }}
                                             >
-                                                <img
+                                                <Image
+                                                    fill
                                                     src={image.src}
-                                                    alt=""
-                                                    className="aspect-[467/263] w-full object-cover"
+                                                    alt="playground_img"
+                                                    className="cover"
                                                 />
                                             </div>
                                         </div>

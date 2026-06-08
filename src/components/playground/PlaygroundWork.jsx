@@ -35,6 +35,33 @@ const projectsData = [
         ],
         img: "/images/homepage/project/img3.png"
     },
+    {
+        id: 4,
+        year: 2025,
+        title: "More Than Dining: Augmented Reality Experiment",
+        category: [
+            "Product Design", "UX"
+        ],
+        img: "/images/homepage/project/img1.png"
+    },
+    {
+        id: 5,
+        year: 2025,
+        title: "More Than Dining: Augmented Reality Experiment",
+        category: [
+            "Product Design", "UX"
+        ],
+        img: "/images/homepage/project/img2.png"
+    },
+    {
+        id: 6,
+        year: 2025,
+        title: "More Than Dining: Augmented Reality Experiment",
+        category: [
+            "Product Design", "UX"
+        ],
+        img: "/images/homepage/project/img3.png"
+    },
 ]
 const PlaygroundWork = () => {
     const container = useRef(null);
@@ -66,7 +93,7 @@ const PlaygroundWork = () => {
             <div className="container py-12 md:py-24 space-y-5 md:space-y-16">
                 <div className="w-full md:grid grid-cols-6 items-end">
                     <div className="col-span-4">
-                        <h2 className='text-gray text-3xl md:text-6xl  leading-none md:leading-14 font-thin '>Creativity Crafted for <br />  <span className='text-choc playfair-italic'>Modern Brands</span></h2>
+                        <h2 className='text-gray text-3xl md:text-6xl  leading-none md:leading-14 font-thin '>Creativity Crafted for <br />  <span className='playfair-italic'>Modern Brands</span></h2>
                     </div>
                     <div className="max-sm:mt-2 col-span-2 pb-3 font-semibold leading-tight text-gray">
                         <p>Creativity crafted for modern brands through thoughtful design, strategic thinking, and meaningful experiences that connect with people authentically.</p>
@@ -93,7 +120,7 @@ const PlaygroundWork = () => {
                                 </div>
                                 <Image src={item.img} alt={item.title} fill className='proj_img scale-125 cover' />
                             </div>
-                            <h4 className='text-choc text-xl md:text-2xl mt-3 md:mt-6 leading-tight font-semibold'>{item.title}</h4>
+                            <h4 className='text-choc text-xl md:text-2xl mt-3  leading-tight font-semibold'>{item.title}</h4>
                         </div>
                     ))}
                 </div>

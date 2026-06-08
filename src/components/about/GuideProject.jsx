@@ -80,15 +80,15 @@ const GuideProject = () => {
 
     return (
         <div ref={containerRef} className=' md:h-[300vh] relative' >
-            <div className=" container md:sticky! top-0  md:h-screen! py-12 md:py-24 md:flex flex-col justify-between  overflow-hidden">
-                <div className="w-full  md:text-center">
-                    <h2 className=' text-3xl md:text-6xl  text-gray leading-none md:leading-12 font-semibold '>Principles that  <br /><span className=' text-choc playfair-italic font-thin'>Guide Every Project</span></h2>
+            <div className=" container max-sm:px-0!  md:sticky! top-0  md:h-screen! py-12 md:py-24 md:flex flex-col justify-between  overflow-hidden">
+                <div className=" max-sm:px-4 w-full  md:text-center">
+                    <h2 className=' text-3xl md:text-6xl  text-gray leading-none md:leading-12 font-semibold '>Principles that  <br /><span className='  playfair-italic font-thin'>Guide Every Project</span></h2>
                 </div>
 
                 <div className="w-full max-sm:flex max-sm:overflow-x-scroll  max-sm:mt-10 scroller_none gap-x-3 relative">
                     {
                         valuesData.map((item, index) => (
-                            <div key={index} className={` slid_crd w-[85vw] shrink-0 md:w-[25vw] p-5 md:p-10 rounded-xl border border-black/20 md:absolute aspect-square bottom-0 flex flex-col  justify-between max-sm:transform-none!  max-sm:rotate-none! ${item.transform} ${item.bgColor} ${item.rotate}`}>
+                            <div key={index} className={` max-sm:first:ml-4 max-sm:last:mr-4 slid_crd w-[85vw] shrink-0 md:w-[25vw] p-5 md:p-10 rounded-xl border border-black/20 md:absolute aspect-square bottom-0 flex flex-col  justify-between max-sm:transform-none!  max-sm:rotate-none! ${item.transform} ${item.bgColor} ${item.rotate}`}>
 
                                 <div className="">
                                     <p className={` text-3xl md:text-4xl leading-none font-semibold ${item.title.class}`}>{item.title.label}</p>

@@ -170,11 +170,11 @@ const Hero = () => {
 
   return (
     <>
-      <div className=" hero_section w-full h-screen! relative overflow-hidden">
-        <Image fill src="/images/homepage/hero_bg.png" alt="hero" className=" hero_bg_img cover absolute brightness-80 inset-0" />
+      <div className=" hero_section w-full h-[100svh]! relative overflow-hidden">
+        <video loop autoPlay muted playsInline className='cover hero_bg_img absolute inset-0' src="/videos/hero_vid.mp4"></video>
         <div className="w-full h-screen! center relative z-10">
           <h1 className=' hero_title  text-white  text-center leading-5 md:leading-12 text-2xl  md:text-5xl lg:text-7xl'>
-            <div className='flex items-center font-semibold'> Designing AI  <img src="/icons/stars.svg" alt="" className=' w-6 md:w-20 -translate-y-2 md:-translate-y-4 mx-2 md:mx-5' /> first products </div>
+            <div className='flex items-center font-semibold'> Designing AI  <img src="/icons/stars.svg" alt="img" className=' w-6 md:w-20 -translate-y-2 md:-translate-y-4 mx-2 md:mx-5' /> first products </div>
             <div className='playfair-italic font-thin'> with human depth</div>
           </h1>
 
@@ -205,8 +205,8 @@ const Hero = () => {
               <p className=' max-sm:text-sm translate-y-0.5'>Ask AI about my design process </p>
               <button className={` max-sm:text-sm flex gap-x-2 items-center font-semibold text-[#713F1E] rounded-lg bg-white px-4 py-2 leading-none text-sm transition-all duration-300  ${isExpand ? "bg-choc text-white" : "bg-transparent"}`}><p className='translate-y-0.75'>Search</p>
                 <div className='relative'>
-                  <img src="/icons/ai_btn_search.svg" alt="" />
-                  <img src="/icons/ai_btn_search_white.svg" className={`absolute inset-0 opacity-0 transition-all duration-300  ${isExpand ? "opacity-100" : ""}`} alt="" />
+                  <img src="/icons/ai_btn_search.svg" alt="img" />
+                  <img src="/icons/ai_btn_search_white.svg" className={`absolute inset-0 opacity-0 transition-all duration-300  ${isExpand ? "opacity-100" : ""}`} alt="img" />
                 </div>
               </button>
             </div>

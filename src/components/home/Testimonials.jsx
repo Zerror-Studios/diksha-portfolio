@@ -83,11 +83,11 @@ const Testimonials = () => {
     const swiperRef = useRef(null);
 
     return (
-        <div>
-            <div className="container py-12 md:py-24 space-y-5 md:space-y-16">
-                <div className="w-full grid grid-cols-6 items-end">
+        <>
+            <div className="container max-sm:px-0! py-12 md:py-24 space-y-5 md:space-y-16">
+                <div className="w-full max-sm:px-4 grid grid-cols-6 items-end">
                     <div className="col-span-4">
-                        <h2 className='text-gray text-3xl md:text-6xl  leading-none md:leading-14 font-thin '>Experiences Shared<br />  <span className='text-choc playfair-italic'>By Brands.</span></h2>
+                        <h2 className='text-gray text-3xl md:text-6xl  leading-none md:leading-14 font-thin '>Experiences Shared<br />  <span className=' playfair-italic'>By Brands.</span></h2>
                     </div>
                     <div className="col-span-2 pb-3 flex justify-end gap-x-1 md:gap-x-4 ">
                         <button
@@ -135,13 +135,13 @@ const Testimonials = () => {
                         className="cursor-grab active:cursor-grabbing"
                         breakpoints={{
                             0: { spaceBetween: 10 },
-                            640: { spaceBetween: 30 },
+                            640: { spaceBetween: 20 },
                         }}
                     >
                         {testimonials.map((item) => (
                             <SwiperSlide
                                 key={item.id}
-                                className=" bg-[#E6DEC9]  rounded-2xl  p-8 w-[90vw] md:w-[40vw]! h-96! shrink-0 text-choc font-semibold  flex!   flex-col  justify-between   "
+                                className=" max-sm:first:ml-4 max-sm:last:mr-4 bg-[#E6DEC9]  rounded-2xl  p-8 w-[85vw]! md:w-[40vw]! h-96! shrink-0 text-choc font-semibold  flex!   flex-col  justify-between   "
                             >
                                 {/* Top */}
                                 <div className=" md:grid grid-cols-4">
@@ -151,7 +151,7 @@ const Testimonials = () => {
                                             alt={item.name}
                                             className="     w-14     h-14     rounded-full     object-cover     shrink-0   "
                                         />
-                                          <p className=" md:hidden text-xl font-semibold  ">
+                                        <p className=" md:hidden text-xl font-semibold  ">
                                             {item.id}
                                         </p>
                                     </div>
@@ -181,7 +181,7 @@ const Testimonials = () => {
                                                 {item.role}
                                             </p>
                                         </div>
-                                        <img src="/icons/oi_double-quote-sans-left.svg" className='w-8' alt="" />
+                                        <img src="/icons/oi_double-quote-sans-left.svg" className='w-8' alt="img" />
                                     </div>
 
                                 </div>
@@ -190,7 +190,7 @@ const Testimonials = () => {
                     </Swiper>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

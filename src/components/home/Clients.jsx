@@ -13,31 +13,31 @@ const marquee = [
 ]
 
 const Clients = () => {
-  return (
-    <div className=' py-12 md:py-24 container'>
-        <div className=" w-full max-sm:space-y-2  md:grid grid-cols-8">
-            <div className="col-span-6">
-                <h4 className='text-choc font-semibold text-2xl leading-none'>Trusted Across <br /> Industries</h4>
+    return (
+        <div className=' py-12 md:py-24 container'>
+            <div className=" w-full max-sm:space-y-2  md:grid grid-cols-8">
+                <div className="col-span-6">
+                    <h4 className='text-choc font-semibold text-2xl leading-none'>Trusted Across <br /> Industries</h4>
+                </div>
+                <div className="col-span-2">
+                    <p className='text-gray font-semibold  leading-tight'>Trusted across industries for reliable solutions, quality service, and lasting business partnerships.</p>
+                </div>
             </div>
-            <div className="col-span-2">
-                <p className='text-gray font-semibold  leading-tight'>Trusted across industries for reliable solutions, quality service, and lasting business partnerships.</p>
-            </div>
-        </div>
 
-        <div className=" mt-10 md:mt-16 h-36 md:h-52 flex items-center relative border border-[#713F1E10]">
-            <div className="size-3 absolute -top-1.5 -left-1.5 z-99 bg-choc"></div>
-            <div className="size-3 absolute -bottom-1.5 -left-1.5 z-99 bg-choc"></div>
-            <div className="size-3 absolute -top-1.5 -right-1.5 z-99 bg-choc"></div>
-            <div className="size-3 absolute -bottom-1.5 -right-1.5 z-99 bg-choc"></div>
-            <Marquee gradient gradientColor='#F9F7EC' gradientWidth={100} className='h-full'>
-                {marquee.map((item, index) => (
-                    <img key={index} src={item} className=' mr-10 max-sm:w-32 md:mr-20' alt="" />
-                ))}
-            </Marquee>
+            <div className=" mt-10 md:mt-16 h-36 md:h-52 flex items-center relative border border-[#713F1E10]">
+                <div className="size-3 absolute -top-1.5 -left-1.5 z-99 bg-choc"></div>
+                <div className="size-3 absolute -bottom-1.5 -left-1.5 z-99 bg-choc"></div>
+                <div className="size-3 absolute -top-1.5 -right-1.5 z-99 bg-choc"></div>
+                <div className="size-3 absolute -bottom-1.5 -right-1.5 z-99 bg-choc"></div>
+                <Marquee gradient gradientColor='#F9F7EC' gradientWidth={100} className='h-full'>
+                    {marquee.map((item, index) => (
+                        <img key={index} src={item} className=' mr-10 max-sm:w-32 md:mr-20' alt="img" />
+                    ))}
+                </Marquee>
+            </div>
+
         </div>
-        
-    </div>
-  )
+    )
 }
 
 export default Clients

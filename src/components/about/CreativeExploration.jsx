@@ -27,11 +27,11 @@ const CreativeExploration = () => {
     return (
         <>
             <div ref={containerRef} className="  container py-12 md:py-24 w-full ">
-                <h2 className='text-gray text-3xl md:text-6xl leading-none md:leading-12 font-semibold '>A Journey of Passion, <br /> Purpose, and  <span className='text-choc playfair-italic font-thin'>Creative <br /> Exploration</span></h2>
+                <h2 className='text-gray text-3xl md:text-6xl leading-none md:leading-12 font-semibold '>A Journey of Passion, <br /> Purpose, and  <span className=' playfair-italic font-thin'>Creative <br /> Exploration</span></h2>
                 <div className="relative h-[50vh]  w-full center">
-                    <img src="/images/aboutpage/oval_img.png" className=' w-full  md:w-1/2 z-10' alt="" />
-                    <img src="/images/aboutpage/diksha_child.png" className='absolute z-[-1] md:translate-x-64 -top-12 md:-top-1/2 w-1/2 md:w-[25vw]' alt="" />
-                    <img src="/images/aboutpage/creative_card.png" className=' crd absolute z-[10] left-0 md:left-32 bottom-32 md:-bottom-24 w-1/2 md:w-[25vw]' alt="" />
+                    <img src="/images/aboutpage/oval_img.png" className=' w-full  md:w-1/2 z-10' alt="img" />
+                    <img src="/images/aboutpage/diksha_child.png" className='absolute z-[-1] md:translate-x-64 -top-12 md:-top-1/2 w-1/2 md:w-[25vw]' alt="img" />
+                    <img src="/images/aboutpage/creative_card.png" className=' crd absolute z-[10] left-0 md:left-32 bottom-32 md:-bottom-24 w-1/2 md:w-[25vw]' alt="img" />
                 </div>
 
                 <div className="w-full bg-choc md:items-stretch md:flex gap-x-20 text-white md:mt-44 p-8 md:p-10 rounded-xl">

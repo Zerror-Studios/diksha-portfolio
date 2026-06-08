@@ -28,7 +28,7 @@ const DesignPath = () => {
     return (
         <>
             <div ref={containerRef} className="container relative py-12 md:py-24  overflow-hidden bg-[#E6DEC9]">
-                <h2 className='text-gray text-3xl md:text-6xl leading-none md:leading-12 font-semibold '>Finding the Right <br /><span className='text-choc playfair-italic font-thin'>Design Path</span></h2>
+                <h2 className='text-gray text-3xl md:text-6xl leading-none md:leading-12 font-semibold '>Finding the Right <br /><span className=' playfair-italic font-thin'>Design Path</span></h2>
 
                 <div className="space-y-4 md:w-1/2 pt-8  md:pt-32 text-choc font-semibold">
                     <p className='md:text-xl  leading-tight'>My formal journey began in fashion design, where I spent four years exploring creativity, aesthetics, and visual thinking. But over time, I realized my curiosity extended beyond fashion itself.</p>
@@ -38,8 +38,8 @@ const DesignPath = () => {
 
                 </div>
 
-                <img className=' max-sm:mt-10 md:absolute top-24 right-[12rem]' src="/images/aboutpage/path_img_1.png" alt="" />
-                <img className=' pth_img_2 max-sm:w-[70%] max-sm:-translate-y-20 md:absolute top-1/2 right-[6rem]' src="/images/aboutpage/path_img_2.png" alt="" />
+                <img className=' max-sm:mt-10 md:absolute top-24 right-[12rem]' src="/images/aboutpage/path_img_1.png" alt="img" />
+                <img className=' pth_img_2 max-sm:w-[70%] max-sm:-translate-y-20 md:absolute top-1/2 right-[6rem]' src="/images/aboutpage/path_img_2.png" alt="img" />
             </div>
         </>
     )

@@ -36,11 +36,11 @@ const GuitarSection = () => {
 
     return (
         <>
-            <div className=" guitar_section w-full h-screen! md:h-[200vh]! relative text-choc overflow-hidden">
+            <div className=" guitar_section w-full h-[120vh]! md:h-[200vh]! relative text-choc overflow-hidden">
 
-                <div className="w-full md:grid grid-cols-3 p-20 absolute z-10">
-                    <div className="col-span-2"></div>
-                    <div className=" max-sm:text-center font-semibold space-y-5">
+                <div className="w-full md:grid grid-cols-3 padding pt-5 md:p-20 absolute z-10">
+                    <div className="col-span-2 max-sm:hidden"></div>
+                    <div className=" max-sm:grid max-sm:grid-cols-2 font-semibold space-y-5">
                         <div className="">
                             <h6 className='playfair text-xl mb-1'>Empathy</h6>
                             <p className=' leading-none'>I design with people at <br /> the heart.</p>
@@ -62,11 +62,11 @@ const GuitarSection = () => {
 
                 <div className="w-full md:grid grid-cols-3 bottom-0 p-5 md:p-20 absolute z-10">
                     <div className="col-span-2">
-                        <div className=" w-full md:w-fit grid grid-cols-4 gap-2">
+                        <div className=" w-full md:w-fit grid grid-cols-3 gap-2">
 
                             {icons.map((item, i) => (
-                                <div key={i} className=" size-18 md:size-20 hover:bg-[#713F1E] backdrop-blur-md transition-all duration-150 rounded-full bg-[#713F1E30] center">
-                                    <img src={item} alt="" className='max-sm:w-8' />
+                                <div key={i} className=" size-16 md:size-18 hover:bg-[#713F1E] backdrop-blur-md transition-all duration-150 rounded-full bg-[#713F1E30] center">
+                                    <img src={item} alt="img" className='max-sm:w-8 w-10' />
                                 </div>
                             ))}
                         </div>
@@ -81,7 +81,7 @@ const GuitarSection = () => {
                 </div>
 
 
-                <Image fill src="/images/homepage/guitar.png" alt="guitar" className="cover brightness-80 guitar_bg_img" />
+                <Image fill src="/images/homepage/guitar.png" alt="guitar" className="cover max-sm:object-left brightness-80 guitar_bg_img" />
             </div>
         </>
     )
