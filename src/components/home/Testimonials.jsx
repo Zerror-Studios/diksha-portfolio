@@ -87,7 +87,7 @@ const Testimonials = () => {
             <div className="container max-sm:px-0! py-12 md:py-24 space-y-5 md:space-y-16">
                 <div className="w-full max-sm:px-4 grid grid-cols-6 items-end">
                     <div className="col-span-4">
-                        <h2 className='text-gray text-3xl md:text-6xl  leading-none md:leading-14 font-thin '>Experiences Shared<br />  <span className=' playfair-italic'>By Brands.</span></h2>
+                        <h2 className='text-gray text-2xl leading-none text-choc font-semibold '>Experiences Shared<br />  <span className=' playfair-italic'>By Brands.</span></h2>
                     </div>
                     <div className="col-span-2 pb-3 flex justify-end gap-x-1 md:gap-x-4 ">
                         <button

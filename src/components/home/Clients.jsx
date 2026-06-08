@@ -20,7 +20,7 @@ const Clients = () => {
                     <h4 className='text-choc font-semibold text-2xl leading-none'>Trusted Across <br /> Industries</h4>
                 </div>
                 <div className="col-span-2">
-                    <p className='text-gray font-semibold  leading-tight'>Trusted across industries for reliable solutions, quality service, and lasting business partnerships.</p>
+                    <p className='text-gray   leading-tight'>Trusted across industries for reliable solutions, quality service, and lasting business partnerships.</p>
                 </div>
             </div>
 

@@ -82,7 +82,7 @@ const GuideProject = () => {
         <div ref={containerRef} className=' md:h-[300vh] relative' >
             <div className=" container max-sm:px-0!  md:sticky! top-0  md:h-screen! py-12 md:py-24 md:flex flex-col justify-between  overflow-hidden">
                 <div className=" max-sm:px-4 w-full  md:text-center">
-                    <h2 className=' text-3xl md:text-6xl  text-gray leading-none md:leading-12 font-semibold '>Principles that  <br /><span className='  playfair-italic font-thin'>Guide Every Project</span></h2>
+                    <h2 className=' text-3xl md:text-6xl  text-choc leading-none md:leading-12 font-semibold '>Principles that  <br /><span className='  playfair-italic font-thin'>Guide Every Project</span></h2>
                 </div>
 
                 <div className="w-full max-sm:flex max-sm:overflow-x-scroll  max-sm:mt-10 scroller_none gap-x-3 relative">

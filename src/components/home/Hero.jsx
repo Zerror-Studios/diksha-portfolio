@@ -49,6 +49,7 @@ const Hero = () => {
   const answerRef = useRef(null);
 
   useGSAP(() => {
+
     if (window.innerWidth < 750) return
     gsap.to([".hero_bg_img"], {
       y: 200,
@@ -170,11 +171,11 @@ const Hero = () => {
 
   return (
     <>
-      <div className=" hero_section w-full h-[100svh]! relative overflow-hidden">
+      <div className=" hero_section  w-full h-[100svh]! relative overflow-hidden">
         <video loop autoPlay muted playsInline className='cover hero_bg_img absolute inset-0' src="/videos/hero_vid.mp4"></video>
         <div className="w-full h-screen! center relative z-10">
           <h1 className=' hero_title  text-white  text-center leading-5 md:leading-12 text-2xl  md:text-5xl lg:text-7xl'>
-            <div className='flex items-center font-semibold'> Designing AI  <img src="/icons/stars.svg" alt="img" className=' w-6 md:w-20 -translate-y-2 md:-translate-y-4 mx-2 md:mx-5' /> first products </div>
+            <div className='flex items-center font-semibold '> Designing AI  <img src="/icons/stars.svg" alt="img" className=' w-6 md:w-20 -translate-y-2 md:-translate-y-4 mx-2 md:mx-5' /> first products </div>
             <div className='playfair-italic font-thin'> with human depth</div>
           </h1>
 
