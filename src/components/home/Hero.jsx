@@ -187,7 +187,7 @@ const Hero = () => {
             </div>
           )}
 
-          <div ref={promptRef} className={` cursor-pointer absolute bottom-10 left-1/2 -translate-x-1/2 transition-all duration-300  ${isExpand ? " w-[90vw] md:w-[60vw] bg-[#100E0D35] p-4 md:p-10" : " w-[90vw] md:w-[40vw] p-0 bg-white/20"}   border  text-white border-white/50  backdrop-blur-lg rounded-xl`}>
+          <div ref={promptRef} className={` cursor-pointer absolute bottom-20 md:bottom-10 left-1/2 -translate-x-1/2 transition-all duration-300  ${isExpand ? " w-[90vw] md:w-[60vw] bg-[#100E0D35] p-4 md:p-10" : " w-[90vw] md:w-[40vw] p-0 bg-white/20"}   border  text-white border-white/50  backdrop-blur-lg rounded-xl`}>
             <div className={`h-0 overflow-hidden transition-all duration-300  ${isExpand ? "h-78 opacity-100" : "opacity-0"}`}>
               <h4 className='md:text-2xl font-semibold'>Quick Prompt //</h4>
               <div className="space-y-2 py-5">
