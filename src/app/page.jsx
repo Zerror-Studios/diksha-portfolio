@@ -4,13 +4,20 @@ import Hero from "@/components/home/Hero";
 import KeyProjects from "@/components/home/KeyProjects";
 import Testimonials from "@/components/home/Testimonials";
 import { createPageMetadata } from "@/lib/seo";
+import { client } from "@/sanity/lib/client";
+import { PROJECTS_QUERY } from "@/sanity/lib/queries";
 
-const HomePage = () => {
+export const revalidate = 60;
+
+const HomePage = async () => {
+
+    const projects = await client.fetch(PROJECTS_QUERY);
+
   return (
     <>
     <Hero />
     <Clients/>
-    <KeyProjects/>
+    <KeyProjects projects={projects}/>
     <GuitarSection/>
     <Testimonials/>
     </>

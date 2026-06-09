@@ -1,13 +1,34 @@
 "use client";
 import React from 'react'
-import { useGSAP } from '@gsap/react'
-import { RiBehanceLine, RiLinkedinLine, RiMailFill, RiMailLine } from '@remixicon/react'
+import { RiBehanceLine, RiLinkedinLine } from '@remixicon/react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import { Link } from 'next-view-transitions';
+import { usePathname } from 'next/navigation';
 gsap.registerPlugin(ScrollTrigger)
 
+const footerLinks = [
+  {
+    label: "about",
+    href: "/about"
+  },
+  {
+    label: "playground",
+    href: "/playground"
+  },
+  {
+    label: "contact",
+    href: "/contact"
+  },
+  {
+    label: "resume",
+    href: ""
+  },
+]
+
 const Footer = () => {
+
+  const pathname = usePathname()
 
   return (
     <>
@@ -16,38 +37,32 @@ const Footer = () => {
         <div className=" footer_cont container">
           <div className="w-full h-140 bg-[#100E0D40] backdrop-blur-xs rounded-3xl flex flex-col justify-between p-6 md:p-10">
             <div className="w-full md:flex justify-between">
-              <h2 className='text-white text-3xl md:text-6xl  leading-none md:leading-14 font-thin '>Created With <br />  <span className=' playfair-italic'>intention.</span></h2>
+              <h2 className='text-white text-3xl capitalize md:text-6xl  leading-none font-thin '>Created With <br />  intention.</h2>
               <div className=" max-sm:mt-10 capitalize md:text-xl text-white ">
                 <div className="leading-tight space-y-2">
-                  <Link
-                    href="/about"
-                    className="block w-fit hover:underline underline-offset-4"
-                  >
-                    About
-                  </Link>
-                  <Link
-                    href="/playground"
-                    className="block w-fit hover:underline underline-offset-4"
-                  >
-                    Playground
-                  </Link>
-                  <div className="leading-tight space-y-2">
-                    <Link
-                      href="/contact"
-                      className="block w-fit hover:underline underline-offset-4"
-                    >
-                      Contact
-                    </Link>
-                    <Link
-                      href=""
-                      className="block w-fit hover:underline underline-offset-4"
-                    >
-                      Resume
-                    </Link>
-                  </div>
+                  {footerLinks.map((item, i) => {
+                    const isActive = item.path === pathname
+
+                    return (
+                      <Link
+                        key={i}
+                        href={item.href}
+                        className="block group w-fit  relative"
+                      >
+                        <span
+                          className={`
+                        navLinkBar
+                      bg-white
+              absolute left-0 bottom-1 h-[1.5px] rounded-full w-full
+              transition-transform duration-300 ease-out
+              ${isActive ? "scale-x-100 origin-left" : "scale-x-0 origin-left group-hover:scale-x-100"}
+            `}
+                        ></span>
+                        {item.label}
+                      </Link>
+                    )
+                  })}
                 </div>
-
-
               </div>
             </div>
             <div className=" w-full h-fit space-y-24 md:space-y-0 md:items-center md:justify-between md:flex md:flex-row-reverse  font-semibold md:text-xl rounded-xl md:rounded-full md:px-8 p-5 text-choc bg-[#F9F7EC]">
@@ -60,15 +75,15 @@ const Footer = () => {
                 </div>
               </div>
               <div className="capitalize md:flex md:items-center md:gap-x-2">
-                <p className='text-base'>social media</p>
+                <p className='text-base md:translate-y-0.75'>social media</p>
                 <div className=" flex items-center gap-x-2">
 
-                  <button className='size-12 border border-[#713F1E] hover:bg-[#713F1E] hover:text-[#E6DEC9]! transition-all duration-300 rounded-full center text-choc'>
+                  <Link href={"https://www.linkedin.com/in/dikshaghanshani/"} target='_blank' className='size-12 border border-[#713F1E] hover:bg-[#713F1E] hover:text-[#E6DEC9]! transition-all duration-300 rounded-full center text-choc'>
                     <RiLinkedinLine size={22} />
-                  </button>
-                  <button className='size-12 border border-[#713F1E] hover:bg-[#713F1E] hover:text-[#E6DEC9]! transition-all duration-300 rounded-full center text-choc'>
+                  </Link>
+                  <Link href={"https://www.behance.net/dikshaghan7cec"} target='_blank' className='size-12 border border-[#713F1E] hover:bg-[#713F1E] hover:text-[#E6DEC9]! transition-all duration-300 rounded-full center text-choc'>
                     <RiBehanceLine size={22} />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -81,7 +96,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </div >
     </>
   )
 }

@@ -8,9 +8,13 @@ import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const images = Array.from({ length: 16 }, (_, i) => ({
+const topImages = Array.from({ length: 16 }, (_, i) => ({
     id: i,
-    src: `/images/playground/img${i + 1}.png`,
+    src: `/images/playground/img${i + 1}.webp`,
+}));
+const bottomImages = Array.from({ length: 16 }, (_, i) => ({
+    id: i,
+    src: `/images/playground/img${i + 16}.webp`,
 }));
 
 const innerIndexes = [5, 6, 9, 10];
@@ -347,11 +351,29 @@ export default function ReferenceImages() {
     }, []);
 
     useGSAP(() => {
+
         gsap.to(".grid_anim", {
             opacity: 1,
             duration: 1
         })
-    })
+
+        const tl = gsap.timeline({
+            delay: 0.5
+        })
+
+        tl.to(".anim_y", {
+            transform: "translateY(0.1875rem)",
+            ease: "expo.out"
+        })
+        tl.to(".cent_sq", {
+            width: "1rem",
+            ease: "expo.out"
+        })
+        tl.to(".anim_h1", {
+            gap: "1rem",
+            ease: "expo.out"
+        }, "<")
+    });
 
     return (
         <section
@@ -360,10 +382,14 @@ export default function ReferenceImages() {
         >
             <div className="sticky top-0 h-screen! overflow-hidden">
                 {/* Heading */}
-                <h1 className="absolute inset-0  -translate-x-1 flex max-sm:flex-col text-center items-center justify-center gap-4 md:text-2xl font-bold text-choc">
-                    <span className="translate-y-0.75">A mixed bag of experiments, arranged less </span>
-                    <span className="h-3 w-3 bg-choc" />
-                    <span className="translate-y-0.75">like a portfolio and more like a studio table.</span>
+                <h1 className=" anim_h1 absolute top-1/2 -translate-y-1/2 inset-0 overflow-hidden h-fit  -translate-x-1 flex max-sm:flex-col text-center items-center justify-center gap-1 md:text-2xl font-bold text-choc">
+                <div className="block h-fit  overflow-hidden">
+                    <div className=" anim_y translate-y-full">A mixed bag of experiments, arranged less </div>
+                </div>
+                    <div className=" cent_sq aspect-square w-0 bg-choc" />
+                    <div className="block h-fit  overflow-hidden">
+                    <div className="anim_y translate-y-full">like a portfolio and more like a studio table.</div>
+                    </div>
                 </h1>
 
                 <div className=" grid_anim opacity-0 absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2">
@@ -372,7 +398,7 @@ export default function ReferenceImages() {
                         ref={bottomGridRef}
                         className="absolute top-1/2 grid w-[400vw] -translate-y-1/2 grid-cols-4 md:w-full"
                     >
-                        {images.map((image, index) => (
+                        {topImages.map((image, index) => (
                             <li
                                 key={image.id}
                                 style={{
@@ -437,7 +463,7 @@ export default function ReferenceImages() {
                         ref={topGridRef}
                         className=" max-sm:hidden absolute top-1/2 z-20 grid w-[400vw] -translate-y-1/2 grid-cols-4 md:w-full"
                     >
-                        {images.map((image, index) => (
+                        {bottomImages.map((image, index) => (
                             <li
                                 key={`top-${image.id}`}
                                 style={{

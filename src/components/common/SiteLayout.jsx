@@ -13,13 +13,17 @@ import { ViewTransitions } from "next-view-transitions";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function SiteLayout({ children }) {
+
   const pathname = usePathname();
+  const isStudioRoute = pathname.startsWith("/studio")
 
   useEffect(() => {
     window.history.scrollRestoration = "manual";
   }, []);
 
   useEffect(() => {
+    if (isStudioRoute) return;
+
     window.scrollTo(0, 0);
 
     if (window.lenis) {
@@ -38,7 +42,11 @@ export default function SiteLayout({ children }) {
     }, 500);
 
     return () => clearTimeout(timeout);
-  }, [pathname]);
+  }, [pathname, isStudioRoute]);
+
+  if (isStudioRoute) {
+    return <ViewTransitions>{children}</ViewTransitions>;
+  }
 
   return (
     <ViewTransitions>
@@ -54,6 +62,7 @@ export default function SiteLayout({ children }) {
         <footer>
           <Footer />
         </footer>
+
       </LenisScroll>
     </ViewTransitions>
 

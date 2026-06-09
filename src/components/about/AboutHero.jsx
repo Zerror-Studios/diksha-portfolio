@@ -2,9 +2,10 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+import SplitText from 'gsap/dist/SplitText';
 import Image from 'next/image'
 import React from 'react'
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const AboutHero = () => {
 
@@ -48,17 +49,50 @@ const AboutHero = () => {
             }
         })
     })
+
+    useGSAP(() => {
+        const heading_split = SplitText.create(".heading_split", {
+            type: "lines",
+            linesClass: "split-line"
+        });
+
+        heading_split.lines.forEach((line) => {
+            const wrapper = document.createElement("div");
+
+            wrapper.classList.add("line-wrapper");
+
+            line.parentNode.insertBefore(wrapper, line);
+            wrapper.appendChild(line);
+        });
+
+        gsap.set([heading_split.lines], { yPercent: 120 });
+
+        const tl = gsap.timeline({
+            delay: 0.5
+        })
+        tl.to(".content_box", {
+            opacity: 1,
+            duration: 0.01
+        })
+        tl.to(heading_split.lines, {
+            yPercent: 15,
+            duration: 0.8,
+            ease: "expo.out",
+            stagger: 0.05,
+        }, "<");
+
+    });
     return (
         <>
-            <div className=" about_hero w-full relative">
-                <div className=" diksha_img w-full h-screen! fixed inset-0 z-[-1]">
+            <div className=" content_box about_hero w-full relative">
+                <div className=" diksha_img w-full h-[100svh]! fixed inset-0 z-[-1]">
                     <Image src="/images/aboutpage/diksha_pic.png" alt="img" fill className='object-cover' />
                 </div>
-                <div className=" abt_hero_bg w-full h-screen! center text-center bg-[#F9F7EC00]">
-                    <h1 className=' abt_hero_bg_title   z-10 text-white leading-none  text-4xl  md:text-7xl' >Hello, I'm <br /> <span className='playfair-italic'>Diksha Ghanshani</span></h1>
+                <div className=" abt_hero_bg w-full h-[100svh]! flex items-end text-left! container pb-12 md:pb-24 bg-[#F9F7EC00]">
+                    <h1 className=' abt_hero_bg_title heading_split font-semibold   z-10 text-white leading-none  text-4xl  md:text-7xl' >Hello, I'm <br /> Diksha Ghanshani</h1>
                 </div>
                 <div className=" padding abt_hero_bg abt_desc_sec  w-full h-[50vh] center text-center bg-[#F9F7EC00] ">
-                    <p className='font-semibold text-choc leading-none md:w-[60%] text-xl md:text-3xl'>From observing customer behavior in a family-run stationery shop to designing healthcare solutions and large-scale product experiences, the journey has always been driven by one belief — meaningful design begins with understanding people.</p>
+                    <p className='font-semibold text-choc leading-none md:w-[60%] text-3xl capitalize'>From observing customer behavior in a family-run stationery shop to designing healthcare solutions and large-scale product experiences, the journey has always been driven by one belief — meaningful design begins with understanding people.</p>
                 </div>
             </div>
             <div className=" clip_paren w-full h-screen! relative overflow-hidden bg-[#F9F7EC]">
@@ -66,17 +100,17 @@ const AboutHero = () => {
                     <img src="/images/aboutpage/abt_clip.svg" className='w-full ' alt="img" />
                 </div>
 
-                <Image src="/images/aboutpage/abt_img.png" alt='loading' fill className=' clip_inn_img cover' />
+                <Image src="/images/aboutpage/second_hero_bg_img.jpeg" alt='loading' fill className=' clip_inn_img cover brightness-50' />
 
-                <div className="container text-white w-full flex flex-col justify-between pt-44 pb-14 absolute! inset-0 z-10 text-center">
-                    <h2 className='text-white text-3xl md:text-6xl  leading-none md:leading-14 font-thin '>Design Beyond<br /> <span className=' playfair-italic'>Screens.</span></h2>
+                <div className="container text-white w-full flex flex-col justify-between pt-52 pb-14 absolute! inset-0 z-10 text-center">
+                    <h2 className='text-white text-3xl capitalize leading-none font-semibold '>Design Beyond<br />Screens.</h2>
 
                     <div className="w-full grid grid-cols-1 md:grid-cols-2 text-left gap-y-10 gap-x-24">
-                        <div className="flex gap-x-4 leading-tight md:text-xl ">
+                        <div className="flex gap-x-4 leading-tight md:text-lg ">
                             <div className="size-2 shrink-0 translate-y-1 bg-white"></div>
                             <p>Design, for me, has never been limited to visuals or interfaces. It has always been about people — how they think, behave, choose, struggle, connect, and experience the world around them. I believe truly meaningful design begins with empathy and grows through understanding human needs, emotions, and everyday experiences.</p>
                         </div>
-                        <div className="flex gap-x-4 leading-tight md:text-xl ">
+                        <div className="flex gap-x-4 leading-tight md:text-lg ">
                             <div className="size-2 shrink-0 translate-y-1 bg-white"></div>
                             <p>Growing up in a family business shaped the way I observe products, environments, and customer interactions. Those early experiences eventually evolved into a deeper practice of research-driven, empathy-led design focused on building impactful experiences across products, healthcare, communities, and digital ecosystems.</p>
                         </div>

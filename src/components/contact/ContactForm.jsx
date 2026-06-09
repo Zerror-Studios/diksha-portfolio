@@ -1,10 +1,11 @@
 import { RiBehanceLine, RiLinkedinLine, RiMailFill, RiPhoneFill } from '@remixicon/react'
+import { Link } from 'next-view-transitions'
 import React from 'react'
 
 const ContactForm = () => {
     return (
         <>
-            <div className="w-full container mt-12 md:mt-24 p-5 md:p-10">
+            <div className=" ctct_form opacity-0 w-full container mt-12 md:mt-24 p-5 md:p-10">
                 <div className=" w-full grid-cols-1 md:grid-cols-3 grid bg-[#713F1E] rounded-2xl p-5 md:p-10">
                     <div className=" w-full col-span-1 pr-0 md:pr-12">
                         <div className=" w-full h-fit space-y-24  font-semibold md:text-xl rounded-xl p-5 text-choc bg-[#F9F7EC]">
@@ -20,12 +21,12 @@ const ContactForm = () => {
                                 <p className='text-base'>social media</p>
                                 <div className=" flex items-center gap-x-2">
 
-                                    <button className='size-12 border border-[#713F1E] hover:bg-[#713F1E] hover:text-[#E6DEC9]! transition-all duration-300 rounded-full center text-choc'>
-                                        <RiLinkedinLine size={22} />
-                                    </button>
-                                    <button className='size-12 border border-[#713F1E] hover:bg-[#713F1E] hover:text-[#E6DEC9]! transition-all duration-300 rounded-full center text-choc'>
-                                        <RiBehanceLine size={22} />
-                                    </button>
+                                    <Link href={"https://www.linkedin.com/in/dikshaghanshani/"} target='_blank' className='size-12 border border-[#713F1E] hover:bg-[#713F1E] hover:text-[#E6DEC9]! transition-all duration-300 rounded-full center text-choc'>
+                    <RiLinkedinLine size={22} />
+                  </Link>
+                  <Link href={"https://www.behance.net/dikshaghan7cec"} target='_blank' className='size-12 border border-[#713F1E] hover:bg-[#713F1E] hover:text-[#E6DEC9]! transition-all duration-300 rounded-full center text-choc'>
+                    <RiBehanceLine size={22} />
+                  </Link>
                                 </div>
                             </div>
                         </div>
@@ -59,7 +60,9 @@ const ContactForm = () => {
                             </div>
                             <textarea type="text" placeholder='A Brief About Your Project...' rows={5} className=' text-xl resize-none  font-semibold pt-4 pb-1 border-b border-white/10 w-full outline-none' name="" id="" />
                         </div>
-                        <button className=' px-4 md:px-6 py-3 pb-2 bg-[#F9F7EC] font-semibold text-choc rounded-xl'> Submit Message •</button>
+                                                <button className='bg-[#F9F7EC] text-choc font-semibold text-sm uppercase hover:bg-transparent! border border-transparent hover:text-[#F9F7EC]! hover:border-[#F9F7EC] px-6 py-3 pb-1.5 rounded-lg transition-all duration-300 w-fit block'>
+                                                    <p>Submit</p>
+                                                </button>
                     </div>
                 </div>
 

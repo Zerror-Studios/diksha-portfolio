@@ -2,6 +2,7 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+import Image from 'next/image';
 import React, { useRef } from 'react'
 gsap.registerPlugin(ScrollTrigger)
 
@@ -22,9 +23,25 @@ const Experiences = () => {
         tl.to(".clip_div_1", {
             bottom: 0,
         })
+        tl.to(".exp_bg_img1", {
+            opacity: 0,
+            duration: 0.2
+        }, "<")
+        tl.to(".exp_bg_img2", {
+            opacity: 1,
+            duration: 0.2
+        }, "<")
         tl.to(".clip_div_2", {
             bottom: 0,
         })
+        tl.to(".exp_bg_img2", {
+            opacity: 0,
+            duration: 0.2
+        }, "<")
+        tl.to(".exp_bg_img3", {
+            opacity: 1,
+            duration: 0.2
+        }, "<")
 
 
         if (window.innerWidth < 750) return
@@ -44,16 +61,24 @@ const Experiences = () => {
     return (
         <div ref={containerRef} className=' h-[200vh] relative' >
             <div className=" container sticky! top-0  h-screen! py-12 md:py-24 flex flex-col justify-between  overflow-hidden">
-                <img className=' absolute z-[-1] w-full h-full exp_pr_img cover inset-0' src="/images/aboutpage/experiences_bg.png" alt="img" />
+                <div className=" exp_bg_img1 absolute z-[-1] w-full h-full exp_pr_img  inset-0">
+                    <Image fill className='cover brightness-50' src="/images/aboutpage/exp_bg_img_1.jpeg" alt="img" />
+                </div>
+                <div className="  exp_bg_img2 opacity-0 absolute z-[-1] w-full h-full exp_pr_img  inset-0">
+                    <Image fill className='cover brightness-50' src="/images/aboutpage/exp_bg_img_2.jpg" alt="img" />
+                </div>
+                <div className=" exp_bg_img3 opacity-0 absolute z-[-1] w-full h-full exp_pr_img  inset-0">
+                    <Image fill className='cover brightness-50' src="/images/aboutpage/exp_bg_img_3.webp" alt="img" />
+                </div>
                 <div className="">
-                    <h2 className=' text-3xl md:text-6xl  text-white leading-none md:leading-12 font-semibold '>Building Through <br /><span className=' playfair-italic font-thin'>Experiences</span></h2>
-                    <p className='md:text-xl text-white md:w-[40%] mt-5  leading-tight'>A playful childhood moment captured with joy, innocence, and timeless memories that continue to inspire warmth, happiness, and beautiful storytelling.</p>
+                    <h2 className=' text-3xl capitalize  text-white leading-none  font-semibold '>Building Through <br />Experiences</h2>
+                    <p className='md:text-lg text-white md:w-[40%] mt-5  leading-tight'>A playful childhood moment captured with joy, innocence, and timeless memories that continue to inspire warmth, happiness, and beautiful storytelling.</p>
                 </div>
 
                 <div className="w-full bg-[#FFFEF7] items-stretch md:flex gap-x-20  p-6  md:p-10 rounded-xl">
-                    <div className="md:w-[30%]">
-                        <p className=' text-choc  text-3xl md:text-4xl'>01</p>
-                        <p className=' text-3xl md:text-4xl mt-5 leading-none text-choc'>Design Patent & <br /><span className='  playfair-italic'>product thinking</span></p>
+                    <div className="md:w-[30%] font-semibold">
+                        <p className=' text-choc  text-3xl capitalize'>01</p>
+                        <p className=' text-3xl capitalize  mt-5 leading-none text-choc'>Design Patent & <br />product thinking</p>
                     </div>
                     <div className=" w-full max-sm:h-px max-sm:my-5 md:w-px  bg-[#713F1E30]"></div>
                     <div className="  leading-tight md:w-[70%] space-y-5 opacity-80">
@@ -65,9 +90,9 @@ const Experiences = () => {
                 <div
                     style={{ clipPath: "polygon(0 15%, 100% 0, 100% 100%, 0% 100%)" }} className=" max-sm:pt-24 clip_div_1 absolute z-200 bg-choc -bottom-full left-0 w-full">
                     <div className=" container w-full  text-white items-stretch md:flex gap-x-20 py-12 md:py-24 rounded-xl">
-                        <div className="md:w-[30%]">
-                            <p className='   text-3xl md:text-4xl'>02</p>
-                            <p className=' text-3xl md:text-4xl mt-5 leading-none'>Designing for <br /><span className='  playfair-italic'>healthcare impact</span></p>
+                        <div className="md:w-[30%] font-semibold">
+                            <p className='   text-3xl capitalize '>02</p>
+                            <p className=' text-3xl capitalize  mt-5 leading-none'>Designing for <br />healthcare impact</p>
                         </div>
                         <div className="w-full max-sm:h-px max-sm:my-5 md:w-px  bg-white/50"></div>
                         <div className=" max-sm:mt-5 leading-tight md:w-[70%] space-y-5 opacity-80">
@@ -80,14 +105,28 @@ const Experiences = () => {
                 <div
                     style={{ clipPath: "polygon(0 0%, 100% 25%, 100% 100%, 0% 100%)" }} className="  max-sm:pt-24 clip_div_2 -bottom-full absolute z-500 bg-[#FFFEF7]  left-0 w-full">
                     <div className=" container w-full  items-stretch md:flex gap-x-20 py-12 md:py-24 rounded-xl">
-                        <div className="md:w-[30%] text-choc">
-                            <p className='   text-3xl md:text-4xl'>03</p>
-                            <p className=' text-3xl md:text-4xl mt-5 leading-none text-choc'>Designing for <br /><span className='  playfair-italic'>healthcare impact</span></p>
+                        <div className="md:w-[30%] font-semibold text-choc">
+                            <p className='   text-3xl capitalize '>03</p>
+                            <p className=' text-3xl capitalize  mt-5 leading-none text-choc'>Intuit <br />Core design team</p>
                         </div>
                         <div className="w-full max-sm:h-px max-sm:my-5 md:w-px  bg-[#713F1E30]"></div>
-                        <div className=" max-sm:mt-5 leading-tight md:w-[70%] space-y-5 opacity-80">
-                            <p>My journey later expanded into healthcare innovation at IISc, where I worked with CPDM as a Design and Patient Advisor on one of India’s first insulin pumps for people living with Type 1 Diabetes.</p>
-                            <p>Living with Type 1 Diabetes myself helped me design from both perspectives — user and designer — strengthening my belief that meaningful design is built through empathy and real-life experience.</p>
+                        <div className="max-sm:mt-5 leading-tight md:w-[70%] space-y-5 opacity-80">
+                            <p>
+                                Currently, I'm part of the Intuit Core Design Team, where I contribute to
+                                large-scale design and product initiatives. One of the highlights was
+                                working on the PM/XD Conference at IDC, Bangalore—Intuit's first-ever
+                                Product and Design Summit in India.
+                            </p>
+
+                            <p>
+                                The event brought together over 300 attendees, with every seat filled. It
+                                was designed not just as a conference, but as an experience:
+                            </p>
+
+                            <p>
+                                Being part of this initiative strengthened my ability to design at
+                                scale—crafting not just products, but ecosystems and experiences.
+                            </p>
                         </div>
                     </div>
                 </div>

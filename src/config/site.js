@@ -50,8 +50,8 @@ export const siteConfig = {
   socials: {
     facebook: "",
     instagram: "",
-    twitter: "",
-    linkedin: "",
+    behance: "https://www.behance.net/dikshaghan7cec",
+    linkedin: "https://www.linkedin.com/in/dikshaghanshani/",
   },
 };
 
