@@ -1,6 +1,12 @@
 import React from "react";
 
 const ProjectDetail = ({ project,setOpenProj }) => {
+  const carouselAspectClasses = {
+    square: "aspect-square",
+    portrait: "aspect-[3/4]",
+    landscape: "aspect-video",
+  };
+
   return (
     <div className="fixed inset-0 z-[999] overflow-y-auto backdrop-blur-xs bg-black/10 py-5">
       <div className="max-w-7xl md:max-w-6xl mx-auto flex justify-end">
@@ -90,6 +96,8 @@ const ProjectDetail = ({ project,setOpenProj }) => {
 
             // CAROUSEL
             if (slide._type === "slideCarousel") {
+              const aspectClass = carouselAspectClasses[slide.aspectSize] || carouselAspectClasses.square;
+
               return (
                 <div
                   key={slide._key}
@@ -100,12 +108,7 @@ const ProjectDetail = ({ project,setOpenProj }) => {
                     {slide.images?.map((img, idx) => (
                       <div
                         key={idx}
-                        className="
-                         w-[40vw]
-                          aspect-square
-                          snap-center
-                          shrink-0
-                        "
+                        className={`w-[40vw] ${aspectClass} snap-center shrink-0`}
                       >
                         <img
                           src={img.asset?.url}

@@ -5,13 +5,13 @@ import KeyProjects from "@/components/home/KeyProjects";
 import Testimonials from "@/components/home/Testimonials";
 import { createPageMetadata } from "@/lib/seo";
 import { client } from "@/sanity/lib/client";
-import { PROJECTS_QUERY } from "@/sanity/lib/queries";
+import { HOME_PROJECTS_QUERY } from "@/sanity/lib/queries";
 
 export const revalidate = 60;
 
 const HomePage = async () => {
 
-    const projects = await client.fetch(PROJECTS_QUERY);
+    const projects = await client.fetch(HOME_PROJECTS_QUERY);
 
   return (
     <>

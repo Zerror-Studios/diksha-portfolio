@@ -2,13 +2,13 @@ import PlaygroundHero from '@/components/playground/PlaygroundHero';
 import PlaygroundWork from '@/components/playground/PlaygroundWork';
 import { createPageMetadata } from '@/lib/seo';
 import { client } from '@/sanity/lib/client';
-import { PROJECTS_QUERY } from '@/sanity/lib/queries';
+import { PLAYGROUND_PROJECTS_QUERY } from '@/sanity/lib/queries';
 import React from 'react'
 
 export const revalidate = 60;
 
 const page = async () => {
-  const projects = await client.fetch(PROJECTS_QUERY);
+  const projects = await client.fetch(PLAYGROUND_PROJECTS_QUERY);
 
   return (
     <>

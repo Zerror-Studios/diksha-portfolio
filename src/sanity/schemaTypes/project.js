@@ -19,6 +19,22 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'projectPlacement',
+      title: 'Project location',
+      type: 'string',
+      hidden: true,
+      initialValue: 'home',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'displayOrder',
+      title: 'Display order',
+      description: 'Lower numbers show first. Use this to rearrange projects inside the Home and Playground tabs.',
+      type: 'number',
+      initialValue: 0,
+      validation: (Rule) => Rule.integer(),
+    }),
+    defineField({
       name: 'projectCompletionYear',
       title: 'Project completion year',
       type: 'number',
@@ -72,6 +88,21 @@ export default defineType({
           type: 'object',
           fields: [
             defineField({
+              name: 'aspectSize',
+              title: 'Aspect size',
+              type: 'string',
+              options: {
+                layout: 'radio',
+                list: [
+                  { title: 'Square', value: 'square' },
+                  { title: 'Portrait', value: 'portrait' },
+                  { title: 'Landscape', value: 'landscape' },
+                ],
+              },
+              initialValue: 'square',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
               name: 'images',
               title: 'Images',
               type: 'array',
@@ -81,13 +112,18 @@ export default defineType({
           ],
           preview: {
             select: {
+              aspectSize: 'aspectSize',
               images: 'images',
             },
-            prepare({ images }) {
+            prepare({ aspectSize, images }) {
               const count = images?.length || 0
+              const aspectLabel = aspectSize
+                ? aspectSize.charAt(0).toUpperCase() + aspectSize.slice(1)
+                : 'Square'
 
               return {
                 title: `Carousel (${count} ${count === 1 ? 'image' : 'images'})`,
+                subtitle: aspectLabel,
                 media: images?.[0],
               }
             },
@@ -96,11 +132,29 @@ export default defineType({
       ],
     }),
   ],
+  orderings: [
+    {
+      title: 'Display order',
+      name: 'displayOrderAsc',
+      by: [
+        { field: 'displayOrder', direction: 'asc' },
+        { field: 'projectCompletionYear', direction: 'desc' },
+        { field: '_createdAt', direction: 'desc' },
+      ],
+    },
+  ],
   preview: {
     select: {
       title: 'title',
-      subtitle: 'projectCompletionYear',
+      subtitle: 'projectPlacement',
       media: 'coverImage',
+    },
+    prepare({ title, subtitle, media }) {
+      return {
+        title,
+        subtitle: subtitle === 'playground' ? 'Playground' : 'Home',
+        media,
+      }
     },
   },
 })
