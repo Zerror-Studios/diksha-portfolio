@@ -33,4 +33,13 @@ export const structure = (S) =>
               S.initialValueTemplateItem('project-playground'),
             ])
         ),
+      S.divider(),
+      S.listItem()
+        .title('Contact submissions')
+        .schemaType('contactSubmission')
+        .child(
+          S.documentTypeList('contactSubmission')
+            .title('Contact submissions')
+            .defaultOrdering([{ field: 'submittedAt', direction: 'desc' }])
+        ),
     ])

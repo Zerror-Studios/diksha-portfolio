@@ -79,10 +79,10 @@ const PersonalGallery = () => {
                     <Image fill className='cover' src="/images/aboutpage/hover_per_img_2.png" alt="img" />
                     </div>
                     <div className="w-[85vw] rounded-xl overflow-hidden shrink-0 relative aspect-square">
-                    <Image fill className='cover' src="/images/aboutpage/hover_per_img_3.jpeg" alt="img" />
+                    <Image fill className='cover' src="/images/aboutpage/hover_per_img_3.png" alt="img" />
                     </div>
                     <div className="w-[85vw] rounded-xl overflow-hidden shrink-0 relative aspect-square">
-                    <Image fill className='cover' src="/images/aboutpage/hover_per_img_4.jpg" alt="img" />
+                    <Image fill className='cover' src="/images/aboutpage/hover_per_img_4.png" alt="img" />
                     </div>
                 </div>
             </div>
@@ -99,11 +99,11 @@ const PersonalGallery = () => {
 
                     </div>
                     <div className="  absolute w-[20vw] aspect-square rounded-xl overflow-hidden right-44 per_img_3">
-                        <Image fill className=' cover ' src="/images/aboutpage/hover_per_img_3.jpeg" alt="img" />
+                        <Image fill className=' cover ' src="/images/aboutpage/hover_per_img_3.png" alt="img" />
 
                     </div>
                     <div className="per_img_4   absolute w-[20vw] aspect-square rounded-xl overflow-hidden right-24">
-                        <Image fill className=' cover ' src="/images/aboutpage/hover_per_img_4.jpg" alt="img" />
+                        <Image fill className=' cover ' src="/images/aboutpage/hover_per_img_4.png" alt="img" />
 
                     </div>
 

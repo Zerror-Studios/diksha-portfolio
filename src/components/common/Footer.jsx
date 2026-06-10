@@ -69,9 +69,12 @@ const Footer = () => {
               <div className="space-y-2">
                 <div className="flex gap-x-2 items-center">
                   <img src="/icons/mail_choc.svg" alt="img" />
-                  <p className='translate-y-0.5 hover:underline cursor-pointer'>
+                  <Link target='_blank'
+                    href="mailto:dikshaghanshani97@gmail.com"
+                    className="translate-y-0.5 hover:underline cursor-pointer"
+                  >
                     dikshaghanshani97@gmail.com
-                  </p>
+                  </Link>
                 </div>
               </div>
               <div className="capitalize md:flex md:items-center md:gap-x-2">

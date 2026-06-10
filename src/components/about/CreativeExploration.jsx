@@ -41,7 +41,7 @@ const CreativeExploration = () => {
                 <h2 className='text-choc text-3xl capitalize leading-none font-semibold '>A Journey of Passion, <br /> Purpose, and  Creative <br /> Exploration</h2>
                 <div className="relative h-[50vh]  mt-12 w-full center">
                     <div className=" w-full relative rounded-full aspect-15/9 overflow-hidden md:w-1/2">
-                    <Image fill src="/images/aboutpage/hover_per_img_4.jpg" className='saturate-200 cover ' alt="img" />
+                    <Image fill src="/images/aboutpage/oval_img.png" className='cover ' alt="img" />
                     </div>
                     <img src="/images/aboutpage/diksha_child.png" className=' child_img absolute z-[-1] md:translate-x-64 -top-12 md:-top-1/2 w-1/2 md:w-[25vw]' alt="img" />
                     <img src="/images/aboutpage/creative_card.png" className=' crd absolute z-[10] left-0 md:left-32 bottom-32 md:-bottom-24 w-1/2 md:w-[25vw]' alt="img" />

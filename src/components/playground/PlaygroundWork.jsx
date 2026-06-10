@@ -4,14 +4,11 @@ import React, { useRef, useState } from 'react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import { useGSAP } from '@gsap/react';
-import ProjectDetail from '../common/ProjectDetail';
+import { Link } from 'next-view-transitions';
 gsap.registerPlugin(ScrollTrigger)
 
 const PlaygroundWork = ({ projects = [] }) => {
     const container = useRef(null);
-        const [openProj, setOpenProj] = useState(false)
-        const [selectedProject, setSelectedProject] = useState(null)
-    
 
     useGSAP(
         () => {
@@ -37,9 +34,6 @@ const PlaygroundWork = ({ projects = [] }) => {
     );
     return (
         <>
-            {openProj && (
-                        <ProjectDetail project={selectedProject} setOpenProj={setOpenProj} />
-                    )}
             <div className="container py-12 md:py-24 space-y-5 md:space-y-16">
                 <div className="w-full md:grid grid-cols-6 items-end">
                     <div className="col-span-4">
@@ -57,8 +51,8 @@ const PlaygroundWork = ({ projects = [] }) => {
                         if (!imageUrl) return null;
 
                         return (
-                        <div 
-                         onClick={() => { setSelectedProject(item), setOpenProj(true) }}
+                        <Link 
+                        href={`/project/${item.slug}`}
                          key={item._id} className=" proj_paren relative">
                             <div className="w-full aspect-square rounded-xl overflow-hidden relative">
                                 <div className="w-full absolute bottom-0 pointer-events-none h-[30%] bg-linear-to-b from-transparent to-black z-10 "></div>
@@ -72,14 +66,14 @@ const PlaygroundWork = ({ projects = [] }) => {
                                     </div>
                                     <div className="flex flex-wrap gap-x-1">
                                         {categories.map((category) => (
-                                            <button key={category} className='border border-white text-sm  px-2 py-2 pb-1 rounded-md '>{category}</button>
+                                            <button key={category} className='border capitalize border-white text-sm  px-2 py-2 pb-1 rounded-md '>{category}</button>
                                         ))}
                                     </div>
                                 </div>
                                 <Image src={imageUrl} alt={item.title} fill className='proj_img scale-125 cover' />
                             </div>
                             <h4 className='text-choc text-xl  mt-3  leading-none font-semibold'>{item.title}</h4>
-                        </div>
+                        </Link>
                     )})}
                 </div>
             </div>

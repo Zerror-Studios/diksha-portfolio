@@ -100,7 +100,7 @@ const AboutHero = () => {
                     <img src="/images/aboutpage/abt_clip.svg" className='w-full ' alt="img" />
                 </div>
 
-                <Image src="/images/aboutpage/second_hero_bg_img.jpeg" alt='loading' fill className=' clip_inn_img cover brightness-50' />
+                <Image src="/images/aboutpage/abt_img.png" alt='loading' fill className=' clip_inn_img cover ' />
 
                 <div className="container text-white w-full flex flex-col justify-between pt-52 pb-14 absolute! inset-0 z-10 text-center">
                     <h2 className='text-white text-3xl capitalize leading-none font-semibold '>Design Beyond<br />Screens.</h2>

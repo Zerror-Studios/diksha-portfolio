@@ -40,11 +40,11 @@ const DesignPath = () => {
                 </div>
 
                 <div className=" rounded-2xl  w-full md:w-[30vw] aspect-4/3 relative overflow-hidden max-sm:mt-10 md:absolute md:top-24 md:right-[12rem]">
-                    <Image fill className=' cover' src="/images/aboutpage/design_img_1.jpg" alt="img" />
+                    <Image fill className=' cover' src="/images/aboutpage/hover_per_img_5.jpeg" alt="img" />
                 </div>
                 <div className=" p-5 pth_img_2 relative rounded-2xl bg-[#E6DEC9] w-[80%] md:w-[30vw] aspect-4/3 overflow-hidden  max-sm:-translate-y-20 md:absolute md:top-1/2 md:right-[6rem]">
                     <div className="w-full h-full relative  rounded-xl overflow-hidden">
-                        <Image fill className=' cover' src="/images/aboutpage/design_img_2.jpg" alt="img" />
+                        <Image fill className=' cover' src="/images/aboutpage/hover_per_img_3.jpeg" alt="img" />
                     </div>
                 </div>
             </div>

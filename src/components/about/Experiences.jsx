@@ -103,27 +103,50 @@ const Experiences = () => {
                 </div>
 
                 <div
-                    style={{ clipPath: "polygon(0 0%, 100% 25%, 100% 100%, 0% 100%)" }} className="  max-sm:pt-24 clip_div_2 -bottom-full absolute z-500 bg-[#FFFEF7]  left-0 w-full">
+                    style={{ clipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0% 100%)" }} className="  max-sm:pt-24 clip_div_2 -bottom-full absolute z-500 bg-[#FFFEF7]  left-0 w-full">
                     <div className=" container w-full  items-stretch md:flex gap-x-20 py-12 md:py-24 rounded-xl">
                         <div className="md:w-[30%] font-semibold text-choc">
                             <p className='   text-3xl capitalize '>03</p>
                             <p className=' text-3xl capitalize  mt-5 leading-none text-choc'>Intuit <br />Core design team</p>
                         </div>
                         <div className="w-full max-sm:h-px max-sm:my-5 md:w-px  bg-[#713F1E30]"></div>
-                        <div className="max-sm:mt-5 leading-tight md:w-[70%] space-y-5 opacity-80">
+                        <div className="max-sm:mt-5 leading-tight md:w-[70%] opacity-80">
                             <p>
                                 Currently, I'm part of the Intuit Core Design Team, where I contribute to
-                                large-scale design and product initiatives. One of the highlights was
-                                working on the PM/XD Conference at IDC, Bangalore—Intuit's first-ever
-                                Product and Design Summit in India.
+                                large-scale design and product initiatives.
                             </p>
 
-                            <p>
+                            <p className="mt-3">
+                                One of the highlights was working on the PM/XD Conference at IDC,
+                                Bangalore—Intuit's first-ever Product and Design Summit in India.
+                            </p>
+
+                            <p className="mt-3">
                                 The event brought together over 300 attendees, with every seat filled. It
                                 was designed not just as a conference, but as an experience:
                             </p>
 
-                            <p>
+                            <ul className="mt-3 space-y-1 list-disc pl-5">
+                                <li>
+                                    The "Find Your Tribe" activity helped people connect meaningfully
+                                </li>
+                                <li>
+                                    Sessions were candid, relatable, and sparked thoughtful discussions
+                                </li>
+                                <li>
+                                    A fireside chat with Anil Kumble offered powerful insights into
+                                    leadership and discipline
+                                </li>
+                                <li>
+                                    Our Design for Delight (D4D) approach encouraged curiosity and
+                                    conversation
+                                </li>
+                                <li>
+                                    The TED Salon added a layer of cross-disciplinary inspiration
+                                </li>
+                            </ul>
+
+                            <p className="mt-3">
                                 Being part of this initiative strengthened my ability to design at
                                 scale—crafting not just products, but ecosystems and experiences.
                             </p>

@@ -1,7 +1,8 @@
 import project from './project'
+import contactSubmission from './contactSubmission'
 
 export const schema = {
-  types: [project],
+  types: [project, contactSubmission],
   templates: (prev) => [
     ...prev.filter((template) => template.schemaType !== 'project'),
     {

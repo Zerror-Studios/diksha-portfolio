@@ -64,6 +64,41 @@ export default defineType({
       options: { hotspot: true },
     }),
     defineField({
+      name: 'lockProject',
+      title: 'Lock this project',
+      type: 'boolean',
+      initialValue: false,
+    }),
+    defineField({
+      name: 'projectPassword',
+      title: 'Project password',
+      type: 'string',
+      hidden: ({ parent }) => parent?.lockProject !== true,
+      validation: (Rule) =>
+        Rule.custom((value, context) => {
+          if (context.parent?.lockProject && !value) {
+            return 'Password is required when this project is locked'
+          }
+
+          return true
+        }),
+    }),
+    defineField({
+      name: 'unlockedSlidesCount',
+      title: 'No. of slides to show without password',
+      type: 'number',
+      initialValue: 0,
+      hidden: ({ parent }) => parent?.lockProject !== true,
+      validation: (Rule) =>
+        Rule.custom((value, context) => {
+          if (!context.parent?.lockProject) return true
+          if (value === undefined || value === null) return 'Add the number of slides to show before password'
+          if (!Number.isInteger(value) || value < 0) return 'Use a whole number of 0 or more'
+
+          return true
+        }),
+    }),
+    defineField({
       name: 'slides',
       title: 'Slides',
       type: 'array',
