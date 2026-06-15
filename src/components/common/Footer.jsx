@@ -37,9 +37,9 @@ const Footer = () => {
         <div className=" footer_cont container">
           <div className="w-full h-140 bg-[#100E0D40] backdrop-blur-xs rounded-3xl flex flex-col justify-between p-6 md:p-10">
             <div className="w-full md:flex justify-between">
-              <h2 className='text-white text-3xl capitalize md:text-6xl  leading-none font-thin '>Created With <br />  intention.</h2>
-              <div className=" max-sm:mt-10 capitalize md:text-xl text-white ">
-                <div className="leading-tight space-y-2">
+              <h2 className='text-white text-3xl   md:text-6xl  leading-none font-thin '>Created with <br />  intention.</h2>
+              <div className=" max-sm:mt-10   md:text-xl text-white ">
+                <div className="leading-tight capitalize space-y-2">
                   {footerLinks.map((item, i) => {
                     const isActive = item.path === pathname
 
@@ -77,8 +77,8 @@ const Footer = () => {
                   </Link>
                 </div>
               </div>
-              <div className="capitalize md:flex md:items-center md:gap-x-2">
-                <p className='text-base md:translate-y-0.75'>social media</p>
+              <div className="  md:flex md:items-center md:gap-x-2">
+                <p className='text-base capitalize md:translate-y-0.75'>social media</p>
                 <div className=" flex items-center gap-x-2">
 
                   <Link href={"https://www.linkedin.com/in/dikshaghanshani/"} target='_blank' className='size-12 border border-[#713F1E] hover:bg-[#713F1E] hover:text-[#E6DEC9]! transition-all duration-300 rounded-full center text-choc'>
@@ -92,11 +92,8 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="w-full mt-12 max-sm:mt-6 text-white md:flex items-center justify-between">
+          <div className="w-full mt-12 text-center max-sm:mt-6 text-white ">
             <p>© {new Date().getFullYear()} Diksha Ghanshani. All rights reserved</p>
-            <Link href={"https://www.zerrorstudios.com/"} target='_blank'>
-              Developed By <span className='hover:underline'> Zerror Studios</span>
-            </Link>
           </div>
         </div>
       </div >

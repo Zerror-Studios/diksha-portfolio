@@ -59,7 +59,7 @@ export const siteRoutes = [
   {
     path: "/",
     label: "Home",
-    title: "AI Product Designer & UX Portfolio",
+    title: "Diksha Ghanshani - Product Designer ",
     description: siteConfig.description,
     priority: 1,
   },

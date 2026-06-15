@@ -58,6 +58,16 @@ export default defineType({
       rows: 5,
     }),
     defineField({
+      name: 'projectLink',
+      title: 'Project Link',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.uri({
+          scheme: ['http', 'https'],
+          allowRelative: false,
+        }),
+    }),
+    defineField({
       name: 'coverImage',
       title: 'Cover image',
       type: 'image',

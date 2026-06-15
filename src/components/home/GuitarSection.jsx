@@ -95,7 +95,8 @@ const GuitarSection = () => {
                         </div>
                         <div className="">
                             <h6 className=' text-2xl'>Creativity</h6>
-                            <p className=' leading-none'>Music inspires how I think, <br />feel, and create.</p>
+                            <p className=' leading-none'>Music, movement, travel, and quiet observation —  <br />they all shape how I think, 
+feel, and create.</p>
                         </div>
                     </div>
                 </div>
@@ -115,12 +116,13 @@ const GuitarSection = () => {
                             ref={paraRef}
                             className="absolute mt-5 font-semibold leading-tight"
                         >
-                            hover
+                            
                         </p>
 
                     </div>
                     <div className=" max-sm:mt-10 font-semibold space-y-2 md:space-y-5">
-                        <p className='  leading-tight md:w-[70%]'>I design with empathy understanding people, not just problems while blending systems thinking,</p>
+                        <p className='  leading-tight md:w-[70%]'> I design with empathy, understanding people, not just problems, by blending systems 
+thinking with careful craft. Like the violin, every tool here took time to learn</p>
                         <Link href={"/about"} className='bg-choc text-sm uppercase hover:bg-transparent! border border-transparent hover:text-[#713F1E] hover:border-[#713F1E] text-white px-6 py-3 pb-1.5 rounded-lg transition-all duration-300 w-fit block'>
                             <p>Read More</p>
                         </Link>
@@ -128,7 +130,7 @@ const GuitarSection = () => {
                 </div>
 
 
-                <Image fill src="/images/homepage/guitar.png" alt="guitar" className="cover max-sm:object-left brightness-80 guitar_bg_img" />
+                <Image fill src="/images/homepage/guitar.png" alt="guitar" className="cover max-sm:object-left  guitar_bg_img" />
             </div>
         </>
     )

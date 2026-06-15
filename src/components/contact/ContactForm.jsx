@@ -81,7 +81,7 @@ const ContactForm = () => {
                                     </Link>
                                 </div>
                             </div>
-                            <div className="capitalize">
+                            <div className=" ">
                                 <p className='text-base'>social media</p>
                                 <div className=" flex items-center gap-x-2">
 

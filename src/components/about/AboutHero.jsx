@@ -88,11 +88,11 @@ const AboutHero = () => {
                 <div className=" diksha_img w-full h-[100svh]! fixed inset-0 z-[-1]">
                     <Image src="/images/aboutpage/diksha_pic.png" alt="img" fill className='object-cover' />
                 </div>
-                <div className=" abt_hero_bg w-full h-[100svh]! flex items-end text-left! container pb-12 md:pb-24 bg-[#F9F7EC00]">
-                    <h1 className=' abt_hero_bg_title heading_split font-semibold   z-10 text-white leading-none  text-4xl  md:text-7xl' >Hello, I'm <br /> Diksha Ghanshani</h1>
+                <div className=" abt_hero_bg w-full h-[100svh]! flex items-center text-center container justify-center bg-[#F9F7EC00]">
+                    <h1 className=' abt_hero_bg_title heading_split font-semibold   z-10 text-white leading-none  text-4xl  md:text-7xl' >Hello, I am <br /> Diksha Ghanshani</h1>
                 </div>
                 <div className=" padding abt_hero_bg abt_desc_sec  w-full h-[50vh] center text-center bg-[#F9F7EC00] ">
-                    <p className='font-semibold text-choc leading-none md:w-[60%] text-3xl capitalize'>From observing customer behavior in a family-run stationery shop to designing healthcare solutions and large-scale product experiences, the journey has always been driven by one belief — meaningful design begins with understanding people.</p>
+                    <p className='font-semibold text-choc leading-none md:w-[65%] text-3xl  '>From observing customer behavior in a family-run stationery shop to designing healthcare solutions and large-scale product experiences, the journey has always been driven by one belief —  <span className='highlight'>meaningful design begins with understanding people.</span></p>
                 </div>
             </div>
             <div className=" clip_paren w-full h-screen! relative overflow-hidden bg-[#F9F7EC]">
@@ -103,7 +103,7 @@ const AboutHero = () => {
                 <Image src="/images/aboutpage/abt_img.png" alt='loading' fill className=' clip_inn_img cover ' />
 
                 <div className="container text-white w-full flex flex-col justify-between pt-52 pb-14 absolute! inset-0 z-10 text-center">
-                    <h2 className='text-white text-3xl capitalize leading-none font-semibold '>Design Beyond<br />Screens.</h2>
+                    <h2 className='text-white text-3xl   leading-none font-semibold '>Design beyond<br />screens.</h2>
 
                     <div className="w-full grid grid-cols-1 md:grid-cols-2 text-left gap-y-10 gap-x-24">
                         <div className="flex gap-x-4 leading-tight md:text-lg ">

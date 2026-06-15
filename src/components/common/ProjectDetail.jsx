@@ -69,19 +69,30 @@ const ProjectDetail = ({ project }) => {
               {project.projectCompletionYear}
             </p>
 
-            <h2 className="text-3xl mt-1 capitalize text-choc font-semibold leading-none">
+            <h2 className="text-3xl mt-1   text-choc font-semibold leading-none">
               {project.title}
             </h2>
 
             <p className="leading-tight text-gray mt-3">
               {project.description}
             </p>
+
+            {project.projectLink && (
+              <a
+                href={project.projectLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex mt-6 w-fit items-center justify-center rounded-md bg-choc px-5 py-3 pb-2 text-sm font-semibold uppercase leading-none text-[#F9F7EC] border border-choc transition-all duration-200 hover:bg-transparent hover:text-choc!"
+              >
+                View Live
+              </a>
+            )}
           </div>
 
           <div className="">
             <div>
               <div className="border-b border-[#713F1E50] mb-2">
-                <h4 className="capitalize font-semibold text-choc">
+                <h4 className="  font-semibold text-choc">
                   category
                 </h4>
               </div>
@@ -155,7 +166,7 @@ const ProjectDetail = ({ project }) => {
 
                   <div className=" padding   w-full max-sm:px-4 grid grid-cols-6 items-end">
                     <div className="col-span-5">
-                      <h2 className=' text-3xl capitalize leading-none text-choc font-semibold '>Built in Motion.</h2>
+                      <h2 className=' text-3xl   leading-none text-choc font-semibold '>Built in Motion.</h2>
                     </div>
                     <div className="col-span-1  shrink-0 pb-3 flex justify-end gap-x-1 md:gap-x-2 ">
                       <button
@@ -214,7 +225,7 @@ const ProjectDetail = ({ project }) => {
                         >
                           <img
                             src={img.asset?.url}
-                            alt="lading"
+                            alt="loading"
                             className="cover "
                           />
                         </SwiperSlide>
@@ -239,7 +250,7 @@ const ProjectDetail = ({ project }) => {
                   className="w-full max-w-md space-y-20"
                 >
                   <div className=" space-y-2">
-                    <h3 className="text-3xl capitalize leading-none  font-semibold">
+                    <h3 className="text-3xl   leading-none  font-semibold">
                       This Project is under NDA
                     </h3>
                     <p>Please Enter password to view all slides</p>

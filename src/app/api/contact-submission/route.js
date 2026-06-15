@@ -3,7 +3,7 @@ import { client } from '@/sanity/lib/client'
 
 const writeClient = client.withConfig({
   useCdn: false,
-  token: process.env.SANITY_API_WRITE_TOKEN,
+  token: process.env.NEXT_PUBLIC_SANITY_API_WRITE_TOKEN,
 })
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -15,7 +15,7 @@ const normalizeField = (value) => {
 }
 
 export async function POST(request) {
-  if (!process.env.SANITY_API_WRITE_TOKEN) {
+  if (!process.env.NEXT_PUBLIC_SANITY_API_WRITE_TOKEN) {
     return NextResponse.json(
       { message: 'Sanity write token is not configured.' },
       { status: 500 }

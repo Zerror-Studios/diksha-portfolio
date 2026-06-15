@@ -89,7 +89,8 @@ const Testimonials = () => {
             <div className="container max-sm:px-0! py-12 md:py-24 space-y-5 md:space-y-16">
                 <div className="w-full max-sm:px-4 grid grid-cols-6 items-end">
                     <div className="col-span-5">
-                        <h2 className=' text-3xl capitalize leading-none text-choc font-semibold '>Experiences Shared<br /> By Brands.</h2>
+                        <h2 className=' text-3xl   leading-none text-choc font-semibold '>Words from people I've had the joy of <br /> designing, building, and occasionally overthinking
+                            with — <br /> across design, product, and engineering.</h2>
                     </div>
                     <div className="col-span-1  shrink-0 pb-3 flex justify-end gap-x-1 md:gap-x-4 ">
                         <button

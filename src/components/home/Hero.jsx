@@ -205,32 +205,28 @@ const Hero = () => {
         <div className={`w-full h-full overla absolute inset-0 bg-black/30 backdrop-blur-md pointer-events-none transition-opacity duration-300 ${(isExpand || hasAnswer) ? "opacity-100" : "opacity-0"}`}></div>
         <div className="w-full h-[100svh]! center relative z-10">
           <h1 className=' hero_title  text-white  text-center leading-none text-2xl  md:text-5xl lg:text-7xl'>
-            <div className="block overflow-hidden">
-              <div className=' hero_anim flex items-center translate-y-full  '> <p className=' translate-y-0.75  md:translate-y-2'> Designing AI </p>  <img src="/icons/stars.svg" alt="img" className=' star_ico opacity-0 origin-center w-6 md:w-20  mx-2 md:mx-5' /> <p className=' translate-y-0.75 md:translate-y-2'> first products </p> </div>
+            <div className="block  overflow-hidden">
+              <div className=' hero_anim  translate-y-full  '>
+                <p className='text-center'> Shaping strategy, systems, and </p>
+              </div>
             </div>
             <div className=" block overflow-hidden">
               <div className=" hero_anim translate-y-full">
-                <div className=' translate-y-0.75  md:translate-y-2'> with human depth</div>
+                <p className='text-center'> Ai-first experiences for human needs</p>
               </div>
             </div>
           </h1>
 
           {hasAnswer && (
-            <div className="absolute text-white leading-none text-base md:text-3xl capitalize w-[95vw] md:w-[80vw] text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className="absolute text-white leading-none text-base md:text-3xl  w-[95vw] md:w-[80vw] text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div className="flex justify-end mb-2">
+            <RiCloseLine size={30} onClick={handleCloseAnswer} className=' hover:text-[#713F1E] cursor-pointer hover:scale-110 transition-all duration-300' />
+              </div>
               <p key={activeAnswer} ref={answerRef}>
                 {activeAnswer}
               </p>
             </div>
           )}
-
-
-          <div onClick={handleCloseAnswer} className={`absolute bottom-32 flex gap-x-1 items-center font-semibold text-choc left-1/2 -translate-x-1/2 bg-white rounded-md px-2 leading-none cursor-pointer hover:bg-[#713F1E] hover:text-white! transition-all duration-300 py-2  uppercase text-sm  ${hasAnswer ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"}`}>
-            <RiCloseLine size={16} />
-            <p className='translate-y-0.75'>close</p>
-          </div>
-
-
-
           <div className="prompt_btn_paren opacity-0 absolute bottom-12 md:bottom-10 left-1/2 -translate-x-1/2 backdrop-blur-lg">
             <div ref={promptRef} className={` prompt_btn   cursor-pointer  transition-all duration-300  ${isExpand ? " w-[90vw] md:w-[60vw] bg-[#100E0D35] p-4 md:p-10" : " w-[90vw] md:w-[40vw] p-0 bg-white/20"}   border  text-white border-white/50   rounded-xl`}>
               <div className={`h-0 overflow-hidden transition-all duration-300  ${isExpand ? "h-78 opacity-100" : "opacity-0"}`}>

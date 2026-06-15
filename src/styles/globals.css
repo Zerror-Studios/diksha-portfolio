@@ -73,6 +73,14 @@ button {
   background-color: #713F1E;
 }
 
+.highlight {
+  display: inline;
+  color: white;
+  padding: 0 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  background: #713F1E;
+}
 
 
 

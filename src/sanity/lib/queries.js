@@ -26,6 +26,7 @@ const PROJECT_CARD_PROJECTION = groq`{
   projectCompletionYear,
   categories,
   description,
+  projectLink,
   coverImage{
     asset->
   },
@@ -47,6 +48,7 @@ export const PROJECT_BY_SLUG_QUERY = groq`*[_type == "project" && slug.current =
   projectCompletionYear,
   categories,
   description,
+  projectLink,
   coverImage{
     asset->
   },

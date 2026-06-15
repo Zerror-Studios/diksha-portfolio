@@ -64,49 +64,26 @@ const PersonalGallery = () => {
             <div className="w-full  absolute z-10">
                 <img src="/images/aboutpage/abt_clip.svg" className='w-full ' alt="img" />
             </div>
-            <div className="w-full padding pt-32 md:pt-52 flex-col md:text-center">
-                <h2 className=' text-3xl capitalize   text-white leading-none font-semibold '>Personal Side Section  <br />Beyond Design</h2>
+            <div className="w-full padding pt-32 md:pt-52  md:text-center">
+                <h2 className=' text-3xl     text-white leading-none font-semibold '>Personal side section  <br />beyond design</h2>
             </div>
 
-            <div className="md:hidden  max-sm:mt-10">
-                <p className=' padding  font-semibold relative z-10 text-white  leading-none  text-xl md:text-3xl capitalize'>Outside of work, I enjoy experiences that encourage patience, discipline, and continuous learning. I play the violin, practice strength training, journal regularly, cook, walk often, and enjoy solo travel experiences that allow deeper observation and conversations with people from different backgrounds. These personal practices influence the way I approach design — with curiosity, openness, reflection, and a constant learner mindset.</p>
+            <div className=" mt-10 md:mt-24">
+                <p className=' padding  font-semibold relative z-10 text-white md:text-center   leading-none  text-xl md:text-3xl  '>Outside of work, I enjoy experiences that encourage patience, discipline, and continuous learning. I play the violin, practice strength training, journal regularly, cook, walk often, and enjoy solo travel experiences that allow deeper observation and conversations with people from different backgrounds. These personal practices influence the way I approach design — with curiosity, openness, reflection, and a constant learner mindset.</p>
 
-                <div className="w-full px-4 flex overflow-x-scroll  max-sm:mt-10 scroller_none gap-x-3 relative">
-                    <div className="w-[85vw] rounded-xl overflow-hidden shrink-0 relative aspect-square">
-                    <Image fill className='cover' src="/images/aboutpage/hover_per_img_1.png" alt="img" />
+                <div className="w-full px-4 flex overflow-x-scroll md:grid md:grid-cols-4 max-sm:mt-10 md:px-24 md:py-24! scroller_none gap-x-3 relative">
+                    <div className="w-[85vw] md:w-full rounded-xl overflow-hidden shrink-0 relative aspect-square">
+                        <Image fill className='cover' src="/images/aboutpage/hover_per_img_1.png" alt="img" />
                     </div>
-                    <div className="w-[85vw] rounded-xl overflow-hidden shrink-0 relative aspect-square">
-                    <Image fill className='cover' src="/images/aboutpage/hover_per_img_2.png" alt="img" />
+                    <div className="w-[85vw] md:translate-y-7 md:w-full rounded-xl overflow-hidden shrink-0 relative aspect-square">
+                        <Image fill className='cover' src="/images/aboutpage/hover_per_img_2.png" alt="img" />
                     </div>
-                    <div className="w-[85vw] rounded-xl overflow-hidden shrink-0 relative aspect-square">
-                    <Image fill className='cover' src="/images/aboutpage/hover_per_img_3.png" alt="img" />
+                    <div className="w-[85vw] md:w-full rounded-xl overflow-hidden shrink-0 relative aspect-square">
+                        <Image fill className='cover' src="/images/aboutpage/hover_per_img_3.png" alt="img" />
                     </div>
-                    <div className="w-[85vw] rounded-xl overflow-hidden shrink-0 relative aspect-square">
-                    <Image fill className='cover' src="/images/aboutpage/hover_per_img_4.png" alt="img" />
+                    <div className="w-[85vw] md:translate-y-7 md:w-full rounded-xl overflow-hidden shrink-0 relative aspect-square">
+                        <Image fill className='cover' src="/images/aboutpage/hover_per_img_4.png" alt="img" />
                     </div>
-                </div>
-            </div>
-            <div ref={containerRef} className=' max-sm:hidden h-[350vh] relative' >
-                <div className=" container sticky! top-0  h-screen!  center  overflow-hidden">
-
-                    <p className='font-semibold relative z-10 pointer-events-none text-white text-center leading-none w-[60%] text-3xl capitalize'>Outside of work, I enjoy experiences that encourage patience, discipline, and continuous learning. I play the violin, practice strength training, journal regularly, cook, walk often, and enjoy solo travel experiences that allow deeper observation and conversations with people from different backgrounds. These personal practices influence the way I approach design — with curiosity, openness, reflection, and a constant learner mindset.</p>
-
-                    <div className="  absolute left-24 w-[20vw] aspect-square rounded-xl overflow-hidden per_img_1">
-                        <Image fill className=' cover ' src="/images/aboutpage/hover_per_img_1.png" alt="img" />
-                    </div>
-                    <div className="  absolute w-[20vw] aspect-square rounded-xl overflow-hidden left-44 per_img_2">
-                        <Image fill className=' cover ' src="/images/aboutpage/hover_per_img_2.png" alt="img" />
-
-                    </div>
-                    <div className="  absolute w-[20vw] aspect-square rounded-xl overflow-hidden right-44 per_img_3">
-                        <Image fill className=' cover ' src="/images/aboutpage/hover_per_img_3.png" alt="img" />
-
-                    </div>
-                    <div className="per_img_4   absolute w-[20vw] aspect-square rounded-xl overflow-hidden right-24">
-                        <Image fill className=' cover ' src="/images/aboutpage/hover_per_img_4.png" alt="img" />
-
-                    </div>
-
                 </div>
             </div>
         </div>

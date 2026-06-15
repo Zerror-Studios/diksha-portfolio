@@ -62,23 +62,23 @@ const Experiences = () => {
         <div ref={containerRef} className=' h-[200vh] relative' >
             <div className=" container sticky! top-0  h-screen! py-12 md:py-24 flex flex-col justify-between  overflow-hidden">
                 <div className=" exp_bg_img1 absolute z-[-1] w-full h-full exp_pr_img  inset-0">
-                    <Image fill className='cover brightness-50' src="/images/aboutpage/exp_bg_img_1.jpeg" alt="img" />
+                    <Image fill className='cover object-bottom brightness-75' src="/images/aboutpage/exp_bg_1.jpg" alt="img" />
                 </div>
                 <div className="  exp_bg_img2 opacity-0 absolute z-[-1] w-full h-full exp_pr_img  inset-0">
-                    <Image fill className='cover brightness-50' src="/images/aboutpage/exp_bg_img_2.jpg" alt="img" />
+                    <Image fill className='cover brightness-75' src="/images/aboutpage/exp_bg_2.JPG" alt="img" />
                 </div>
                 <div className=" exp_bg_img3 opacity-0 absolute z-[-1] w-full h-full exp_pr_img  inset-0">
-                    <Image fill className='cover brightness-50' src="/images/aboutpage/exp_bg_img_3.webp" alt="img" />
+                    <Image fill className='cover object-bottom brightness-75' src="/images/aboutpage/exp_bg_img_3.webp" alt="img" />
                 </div>
                 <div className="">
-                    <h2 className=' text-3xl capitalize  text-white leading-none  font-semibold '>Building Through <br />Experiences</h2>
+                    <h2 className=' text-3xl    text-white leading-none  font-semibold '>Building through <br />experiences</h2>
                     <p className='md:text-lg text-white md:w-[40%] mt-5  leading-tight'>A playful childhood moment captured with joy, innocence, and timeless memories that continue to inspire warmth, happiness, and beautiful storytelling.</p>
                 </div>
 
                 <div className="w-full bg-[#FFFEF7] items-stretch md:flex gap-x-20  p-6  md:p-10 rounded-xl">
                     <div className="md:w-[30%] font-semibold">
-                        <p className=' text-choc  text-3xl capitalize'>01</p>
-                        <p className=' text-3xl capitalize  mt-5 leading-none text-choc'>Design Patent & <br />product thinking</p>
+                        <p className=' text-choc  text-3xl  '>01</p>
+                        <p className=' text-3xl    mt-5 leading-none text-choc'>Design patent & <br />product thinking</p>
                     </div>
                     <div className=" w-full max-sm:h-px max-sm:my-5 md:w-px  bg-[#713F1E30]"></div>
                     <div className="  leading-tight md:w-[70%] space-y-5 opacity-80">
@@ -91,8 +91,8 @@ const Experiences = () => {
                     style={{ clipPath: "polygon(0 15%, 100% 0, 100% 100%, 0% 100%)" }} className=" max-sm:pt-24 clip_div_1 absolute z-200 bg-choc -bottom-full left-0 w-full">
                     <div className=" container w-full  text-white items-stretch md:flex gap-x-20 py-12 md:py-24 rounded-xl">
                         <div className="md:w-[30%] font-semibold">
-                            <p className='   text-3xl capitalize '>02</p>
-                            <p className=' text-3xl capitalize  mt-5 leading-none'>Designing for <br />healthcare impact</p>
+                            <p className='   text-3xl   '>02</p>
+                            <p className=' text-3xl    mt-5 leading-none'>Designing for <br />healthcare impact</p>
                         </div>
                         <div className="w-full max-sm:h-px max-sm:my-5 md:w-px  bg-white/50"></div>
                         <div className=" max-sm:mt-5 leading-tight md:w-[70%] space-y-5 opacity-80">
@@ -106,8 +106,8 @@ const Experiences = () => {
                     style={{ clipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0% 100%)" }} className="  max-sm:pt-24 clip_div_2 -bottom-full absolute z-500 bg-[#FFFEF7]  left-0 w-full">
                     <div className=" container w-full  items-stretch md:flex gap-x-20 py-12 md:py-24 rounded-xl">
                         <div className="md:w-[30%] font-semibold text-choc">
-                            <p className='   text-3xl capitalize '>03</p>
-                            <p className=' text-3xl capitalize  mt-5 leading-none text-choc'>Intuit <br />Core design team</p>
+                            <p className='   text-3xl   '>03</p>
+                            <p className=' text-3xl    mt-5 leading-none text-choc'>Intuit <br />core design team</p>
                         </div>
                         <div className="w-full max-sm:h-px max-sm:my-5 md:w-px  bg-[#713F1E30]"></div>
                         <div className="max-sm:mt-5 leading-tight md:w-[70%] opacity-80">

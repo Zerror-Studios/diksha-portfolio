@@ -29,7 +29,7 @@ const DesignPath = () => {
     return (
         <>
             <div ref={containerRef} className="container relative py-12 md:py-24  overflow-hidden bg-[#E6DEC9]">
-                <h2 className='text-choc text-3xl capitalize leading-none  font-semibold '>Finding the Right <br />Design Path</h2>
+                <h2 className='text-choc text-3xl   leading-none  font-semibold '>Finding the right <br />design path</h2>
 
                 <div className="space-y-4 md:w-1/2 pt-8  md:pt-32 text-choc font-semibold">
                     <p className='md:text-lg  leading-tight'>My formal journey began in fashion design, where I spent four years exploring creativity, aesthetics, and visual thinking. But over time, I realized my curiosity extended beyond fashion itself.</p>

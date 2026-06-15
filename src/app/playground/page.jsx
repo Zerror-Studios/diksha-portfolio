@@ -15,7 +15,7 @@ const page = async () => {
       <PlaygroundHero />
       <PlaygroundWork projects={projects} />
       <div className="w-full padding text-center pb-16 md:pb-32 text-choc font-semibold pt-8 padding md:pt-12">
-        <h3 className='text-3xl capitalize'>Messy in the best way, and still worth returning to.</h3>
+        <h3 className='text-3xl  '>Messy in the best way, and still worth returning to.</h3>
       </div>
     </>
   )
