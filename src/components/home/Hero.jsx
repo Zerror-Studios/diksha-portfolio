@@ -212,7 +212,7 @@ const Hero = () => {
             </div>
             <div className=" block overflow-hidden">
               <div className=" hero_anim translate-y-full">
-                <p className='text-center'> Ai-first experiences for human needs</p>
+                <p className='text-center'> AI-first experiences for human needs</p>
               </div>
             </div>
           </h1>

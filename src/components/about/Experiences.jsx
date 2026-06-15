@@ -62,10 +62,10 @@ const Experiences = () => {
         <div ref={containerRef} className=' h-[200vh] relative' >
             <div className=" container sticky! top-0  h-screen! py-12 md:py-24 flex flex-col justify-between  overflow-hidden">
                 <div className=" exp_bg_img1 absolute z-[-1] w-full h-full exp_pr_img  inset-0">
-                    <Image fill className='cover object-bottom brightness-75' src="/images/aboutpage/exp_bg_1.jpg" alt="img" />
+                    <Image fill className='cover brightness-75' src="/images/aboutpage/exp_bg_2.JPG" alt="img" />
                 </div>
                 <div className="  exp_bg_img2 opacity-0 absolute z-[-1] w-full h-full exp_pr_img  inset-0">
-                    <Image fill className='cover brightness-75' src="/images/aboutpage/exp_bg_2.JPG" alt="img" />
+                    <Image fill className='cover object-bottom brightness-75' src="/images/aboutpage/exp_bg_1.jpg" alt="img" />
                 </div>
                 <div className=" exp_bg_img3 opacity-0 absolute z-[-1] w-full h-full exp_pr_img  inset-0">
                     <Image fill className='cover object-bottom brightness-75' src="/images/aboutpage/exp_bg_img_3.webp" alt="img" />

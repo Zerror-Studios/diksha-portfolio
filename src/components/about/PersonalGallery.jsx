@@ -82,7 +82,7 @@ const PersonalGallery = () => {
                         <Image fill className='cover' src="/images/aboutpage/hover_per_img_3.png" alt="img" />
                     </div>
                     <div className="w-[85vw] md:translate-y-7 md:w-full rounded-xl overflow-hidden shrink-0 relative aspect-square">
-                        <Image fill className='cover' src="/images/aboutpage/hover_per_img_4.png" alt="img" />
+                        <Image fill className='cover' src="/images/aboutpage/hover_per_img_6.jpeg" alt="img" />
                     </div>
                 </div>
             </div>
