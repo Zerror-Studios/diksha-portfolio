@@ -10,28 +10,44 @@ gsap.registerPlugin(ScrollTrigger, ScrambleTextPlugin)
 
 const icons = [
     {
-        icon: "/icons/adobe.svg",
-        para: "Adobe",
-    },
-    {
         icon: "/icons/chatgpt.svg",
         para: "ChatGPT",
-    },
-    {
-        icon: "/icons/claude.svg",
-        para: "Claude",
-    },
-    {
-        icon: "/icons/cursor.svg",
-        para: "Cursor",
-    },
-    {
-        icon: "/icons/figma.svg",
-        para: "Figma",
+        sound: "/audio/chatgpt.mp3"
     },
     {
         icon: "/icons/github.svg",
         para: "GitHub",
+        sound: "/audio/github.mp3"
+    },
+    {
+        icon: "/icons/adobe.svg",
+        para: "Adobe",
+        sound: "/audio/adobe.mp3"
+    },
+    {
+        icon: "/icons/usertesting.svg",
+        para: "User Testing",
+        sound: "/audio/usertesting.mp3"
+    },
+    {
+        icon: "/icons/cursor.svg",
+        para: "Cursor",
+        sound: "/audio/cursor.mp3"
+    },
+    {
+        icon: "/icons/heymarvin.svg",
+        para: "Heymarvin",
+        sound: "/audio/heymarvin.mp3"
+    },
+    {
+        icon: "/icons/figma.svg",
+        para: "Figma",
+        sound: "/audio/figma.mp3"
+    },
+    {
+        icon: "/icons/claude.svg",
+        para: "Claude",
+        sound: "/audio/claude.mp3"
     },
 ];
 
@@ -39,9 +55,7 @@ const GuitarSection = () => {
     const sectionRef = useRef(null)
     const paraRef = useRef(null);
     const audioRefs = useRef([]);
-    const bowRef = useRef(null);
-    const bowWrapperRef = useRef(null);
-    const [onSection, setOnSection] = useState(false)
+    const currentAudio = useRef(null);
     const [activeText, setActiveText] = useState("");
     const strings = [512, 562, 612, 660];
 
@@ -84,68 +98,7 @@ const GuitarSection = () => {
             audio.currentTime = 0;
             audio.play().catch(() => { });
         }
-        if (bowRef.current) {
-            gsap.fromTo(
-                bowRef.current,
-                {
-                    rotate: 0,
-                },
-                {
-                    rotate: -10,
-                    duration: 0.1,
-                    yoyo: true,
-                    repeat: 1,
-                    ease: "power2.out",
-                    overwrite: false,
-                }
-            );
-        }
     };
-
-    useEffect(() => {
-        const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-
-        const moveHandler = (e) => {
-            const dx = e.clientX - pos.x;
-
-            pos.x = e.clientX;
-            pos.y = e.clientY;
-
-            gsap.to(bowWrapperRef.current, {
-                x: e.clientX - 100,
-                y: e.clientY - 100,
-                rotation: gsap.utils.clamp(-4, 4, dx * 0.08),
-                duration: 0.45,
-                ease: "power3.out",
-                overwrite: true,
-                force3D: true,
-                transformOrigin: "50% 90%",
-            });
-        };
-
-        window.addEventListener("mousemove", moveHandler);
-
-        return () => {
-            window.removeEventListener("mousemove", moveHandler);
-        };
-    }, []);
-
-    // useGSAP(() => {
-    //     if (window.innerWidth < 750) return
-
-    //     gsap.fromTo([".guitar_bg_img"], {
-    //         y: -400
-    //     }, {
-    //         y: 400,
-    //         ease: "none",
-    //         scrollTrigger: {
-    //             trigger: ".guitar_section",
-    //             start: "top bottom",
-    //             end: "bottom top",
-    //             scrub: true,
-    //         }
-    //     })
-    // })
 
     useGSAP(
         () => {
@@ -164,55 +117,26 @@ const GuitarSection = () => {
         { dependencies: [activeText] }
     );
 
-    useEffect(() => {
-        const checkInside = (e) => {
-            if (!sectionRef.current) return;
+    const handleMouseEnter = (item) => {
+    setActiveText(item.para);
 
-            const rect = sectionRef.current.getBoundingClientRect();
+    if (currentAudio.current) {
+        currentAudio.current.pause();
+        currentAudio.current.currentTime = 0;
+    }
 
-            const x = e?.clientX ?? window.innerWidth / 2;
-            const y = e?.clientY ?? window.innerHeight / 2;
+    const audio = new Audio(item.sound);
+    currentAudio.current = audio;
 
-            const inside =
-                x >= rect.left &&
-                x <= rect.right &&
-                y >= rect.top &&
-                y <= rect.bottom;
-
-            setOnSection(inside);
-        };
-
-        let mouseX = 0;
-        let mouseY = 0;
-
-        const handleMouseMove = (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            checkInside(e);
-        };
-
-        const handleScroll = () => {
-            checkInside({
-                clientX: mouseX,
-                clientY: mouseY,
-            });
-        };
-
-        window.addEventListener("mousemove", handleMouseMove);
-        window.addEventListener("scroll", handleScroll, true);
-
-        return () => {
-            window.removeEventListener("mousemove", handleMouseMove);
-            window.removeEventListener("scroll", handleScroll, true);
-        };
-    }, []);
+    audio.play().catch(() => {});
+};
 
     return (
         <>
             <div
                 ref={sectionRef}
 
-                className=" guitar_section md:mt-12 w-full h-[120vh]! md:h-[100vw]! relative text-choc overflow-hidden cursor-none " >
+                className=" guitar_section md:mt-12 w-full h-[120vh]! md:h-[100vw]! relative text-choc overflow-hidden " >
 
 
                 <div className=" max-sm:hidden flex gap-x-[.6vw] absolute left-[41%]  bottom-[16%] z-20">
@@ -230,46 +154,30 @@ const GuitarSection = () => {
                     </div>
                 </div>
 
-                <div
-                    ref={bowWrapperRef}
-                    className={`fixed max-sm:hidden top-0 left-0 pointer-events-none z-[9999]`}
-                >
-                    <div
-                        className={` relative transition-opacity duration-150 ${onSection ? "opacity-100" : "opacity-0"}`}>
-                        <Image
-                            ref={bowRef}
-                            src="/images/homepage/violen_stick.png"
-                            alt="img"
-                            height={200}
-                            width={250}
-                        />
-                    </div>
-                </div>
-
                 <div className=" max-sm:hidden audios">
 
 
                     <audio
                         ref={(el) => (audioRefs.current[0] = el)}
-                        src="/audio/1.mp3"
+                        src="/audio/G_string.mp3"
                         preload="auto"
                     />
 
                     <audio
                         ref={(el) => (audioRefs.current[1] = el)}
-                        src="/audio/5.mp3"
+                        src="/audio/D_string.mp3"
                         preload="auto"
                     />
 
                     <audio
                         ref={(el) => (audioRefs.current[2] = el)}
-                        src="/audio/6.mp3"
+                        src="/audio/A_string.mp3"
                         preload="auto"
                     />
 
                     <audio
                         ref={(el) => (audioRefs.current[3] = el)}
-                        src="/audio/7.mp3"
+                        src="/audio/E_string.mp3"
                         preload="auto"
                     />
                 </div>
@@ -333,11 +241,19 @@ const GuitarSection = () => {
 
                 <div className="w-full md:grid grid-cols-3 bottom-0 p-5 pb-10 md:p-20 absolute z-10">
                     <div className="col-span-2 relative">
-                        <div className=" w-full md:w-fit grid grid-cols-3 gap-2">
-
+                        <div className="w-full md:w-fit grid grid-cols-4 gap-2">
                             {icons.map((item, i) => (
-                                <div onMouseEnter={() => setActiveText(item.para)} onMouseLeave={() => setActiveText("")} key={i} className=" size-16 md:size-18 cursor-pointer hover:scale-90 hover:bg-[#713F1E] backdrop-blur-md transition-all duration-150 rounded-full bg-[#713F1E30] center">
-                                    <img src={item.icon} alt="img" className='max-sm:w-8 w-10' />
+                                <div
+                                    key={i}
+                                    onMouseEnter={() => handleMouseEnter(item)}
+                                    onMouseLeave={() => setActiveText("")}
+                                    className="size-16 md:size-18 cursor-pointer hover:scale-90 hover:bg-[#713F1E] backdrop-blur-md transition-all duration-150 rounded-full bg-[#713F1E30] center"
+                                >
+                                    <img
+                                        src={item.icon}
+                                        alt={item.para}
+                                        className="max-sm:w-8 w-10"
+                                    />
                                 </div>
                             ))}
                         </div>
