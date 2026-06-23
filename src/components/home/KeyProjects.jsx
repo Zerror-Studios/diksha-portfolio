@@ -76,22 +76,22 @@ const KeyProjects = ({ projects = [] }) => {
                                 href={`/project/${item.slug}`}
                                 key={item._id}
                             >
-                                <div className="proj_paren w-full rounded-xl aspect-3/4 md:aspect-video text-white relative overflow-hidden">
+                                <div className="proj_paren w-full rounded-xl aspect-video text-white relative overflow-hidden">
 
                                     <div className="w-full absolute bottom-0 pointer-events-none h-[30%] bg-linear-to-b from-transparent to-black z-10 "></div>
 
                                     <Image fill src={imageUrl} className={` proj_img cover`} alt={item.title} />
-                                    <div className=" absolute bottom-0 p-5 md:p-10  z-10 w-full flex justify-between max-sm:flex-col md:items-end">
+                                    <div className=" absolute bottom-0 p-5 md:p-10  z-10 w-full flex justify-between ">
                                         <div className=" md:w-1/2 space-y-2 md:space-y-5">
                                             <div className="font-semibold flex gap-x-1">
                                                 <div className="size-1.5 translate-y-1.5 bg-white"></div>
                                                 {item.projectCompletionYear}
                                             </div>
-                                            <h4 className='md:text-3xl    leading-none font-semibold md:w-[70%]'>{item.title}</h4>
+                                            <h4 className=' text-xl md:text-3xl    leading-none font-semibold md:w-[70%]'>{item.title}</h4>
                                         </div>
-                                        <div className="  max-sm:mt-2 flex flex-wrap gap-1">
+                                       <div className=" w-[80%]  justify-end items-end flex flex-wrap gap-1">
                                             {categories.map((category) => (
-                                                <button key={category} className='border   border-white text-sm font-semibold px-2 py-2 pb-1 rounded-md '>{category}</button>
+                                                <button key={category} className='border  block h-fit  border-white text-sm  px-2 py-2 pb-1 rounded-md '>{category}</button>
                                             ))}
                                         </div>
                                     </div>

@@ -93,7 +93,7 @@ const ProjectDetail = ({ project }) => {
             <div>
               <div className="border-b border-[#713F1E50] mb-2">
                 <h4 className="  font-semibold text-choc">
-                  category
+                  Category
                 </h4>
               </div>
 

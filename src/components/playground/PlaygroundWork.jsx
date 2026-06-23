@@ -67,9 +67,9 @@ where the next idea comes from. </p>
                                                 {item.projectCompletionYear}
                                             </div>
                                         </div>
-                                        <div className="flex flex-wrap gap-1">
+                                         <div className=" w-[80%]  justify-end items-end flex flex-wrap gap-1">
                                             {categories.map((category) => (
-                                                <button key={category} className='border   border-white text-sm  px-2 py-2 pb-1 rounded-md '>{category}</button>
+                                                <button key={category} className='border  block h-fit  border-white text-sm  px-2 py-2 pb-1 rounded-md '>{category}</button>
                                             ))}
                                         </div>
                                     </div>
