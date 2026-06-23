@@ -30,28 +30,6 @@ const KeyProjects = ({ projects = [] }) => {
         }
     }, []);
 
-    useGSAP(() => {
-        if (window.innerWidth < 750) return
-        gsap.utils.toArray(".proj_img").forEach((img) => {
-            gsap.fromTo(
-                img,
-                { y: -200 },
-                {
-                    y: 200,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: img.parentElement,
-                        start: "top bottom",
-                        end: "bottom top",
-                        scrub: true,
-                    },
-                }
-            );
-        });
-    },
-        { scope: container }
-    );
-
     return (
         <>
             <div ref={projectsRef} id='keyProjects' className="container my-6 md:my-6 py-6 md:py-6 space-y-5 md:space-y-16">

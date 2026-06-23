@@ -8,30 +8,7 @@ import { Link } from 'next-view-transitions';
 gsap.registerPlugin(ScrollTrigger)
 
 const PlaygroundWork = ({ projects = [] }) => {
-    const container = useRef(null);
 
-    useGSAP(
-        () => {
-            if (window.innerWidth < 750) return
-            gsap.utils.toArray(".proj_img").forEach((img) => {
-                gsap.fromTo(
-                    img,
-                    { y: -100 },
-                    {
-                        y: 100,
-                        ease: "none",
-                        scrollTrigger: {
-                            trigger: img.parentElement,
-                            start: "top bottom",
-                            end: "bottom top",
-                            scrub: true,
-                        },
-                    }
-                );
-            });
-        },
-        { scope: container }
-    );
     return (
         <>
             <div className="container py-12 md:py-24 space-y-5 md:space-y-16">
@@ -46,7 +23,7 @@ I'm playing with now. Not everything here is resolved. The unresolved ones are u
 where the next idea comes from. </p>
                     </div>
                 </div>
-                <div ref={container} className="grid grid-cols-1 gap-y-8 md:grid-cols-3 gap-x-5">
+                <div className="grid grid-cols-1 gap-y-8 md:grid-cols-3 gap-x-5">
                     {projects.map((item) => {
                         const imageUrl = item.coverImage?.asset?.url;
                         const categories = item.categories || [];
@@ -73,7 +50,7 @@ where the next idea comes from. </p>
                                             ))}
                                         </div>
                                     </div>
-                                    <Image src={imageUrl} alt={item.title} fill className='proj_img scale-125 cover' />
+                                    <Image src={imageUrl} alt={item.title} fill className='proj_img cover' />
                                 </div>
                                 <h4 className='text-choc text-xl  mt-3  leading-none font-semibold'>{item.title}</h4>
                             </Link>
