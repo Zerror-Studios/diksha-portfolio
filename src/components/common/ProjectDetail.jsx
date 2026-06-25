@@ -82,7 +82,7 @@ const ProjectDetail = ({ project }) => {
                 href={project.projectLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex mt-6 w-fit items-center justify-center rounded-md bg-choc px-5 py-3 pb-2 text-sm font-semibold uppercase leading-none text-[#F9F7EC] border border-choc transition-all duration-200 hover:bg-transparent hover:text-choc!"
+                className="inline-flex mt-6 w-fit items-center justify-center rounded-md bg-choc px-5 py-3 pb-2 text-sm font-semibold uppercase leading-none text-[#FFFFFF] border border-choc transition-all duration-200 hover:bg-transparent hover:text-choc!"
               >
                 View Live
               </a>
@@ -101,7 +101,7 @@ const ProjectDetail = ({ project }) => {
                 {project.categories?.map((tag, i) => (
                   <div
                     key={i}
-                    className="rounded-sm px-4 py-2 leading-none pb-1.25 bg-choc text-[#F9F7EC]"
+                    className="rounded-sm px-4 py-2 leading-none pb-1.25 bg-choc text-[#FFFFFF]"
                   >
                     <p className="text-sm uppercase">
                       {tag}
@@ -166,7 +166,7 @@ const ProjectDetail = ({ project }) => {
 
                   <div className=" padding   w-full max-sm:px-4 grid grid-cols-6 items-end">
                     <div className="col-span-5">
-                      <h2 className=' text-3xl   leading-none text-choc font-semibold '>Built in Motion.</h2>
+                      {/* <h2 className=' text-3xl   leading-none text-choc font-semibold '>Built in Motion.</h2> */}
                     </div>
                     <div className="col-span-1  shrink-0 pb-3 flex justify-end gap-x-1 md:gap-x-2 ">
                       <button
@@ -244,7 +244,7 @@ const ProjectDetail = ({ project }) => {
               <div className="absolute inset-0 z-[-1] blur-sm">
                 <Image fill src="/images/projects/unlockBg.jpg" className="cover" alt="bg_img" />
               </div>
-              <div className=" px-5 md:px-20 py-10  mx-auto my-24 bg-choc text-[#F9F7EC] rounded-xl w-fit text-center flex justify-center ">
+              <div className=" px-5 md:px-20 py-10  mx-auto my-24 bg-choc text-[#FFFFFF] rounded-xl w-fit text-center flex justify-center ">
                 <form
                   onSubmit={handleUnlockProject}
                   className="w-full max-w-md space-y-20"
@@ -262,12 +262,12 @@ const ProjectDetail = ({ project }) => {
                       value={password}
                       onChange={(event) => setPassword(event.target.value)}
                       placeholder="Enter Password"
-                      className="w-full border-b border-[#F9F7EC]   outline-none focus:border-white"
+                      className="w-full border-b border-[#FFFFFF]   outline-none focus:border-white"
                     />
                     <button
                       type="submit"
                       disabled={isUnlocking}
-                      className="shrink-0 text-sm uppercase rounded-md bg-[#F9F7EC] hover:bg-transparent hover:text-[#F9F7EC]!  border border-transparent hover:border-[#F9F7EC] transition-all duration-150 px-4 py-2 pb-1.25 font-semibold text-choc disabled:opacity-60"
+                      className="shrink-0 text-sm uppercase rounded-md bg-[#FFFFFF] hover:bg-transparent hover:text-[#FFFFFF]!  border border-transparent hover:border-[#FFFFFF] transition-all duration-150 px-4 py-2 pb-1.25 font-semibold text-choc disabled:opacity-60"
                     >
                       {isUnlocking ? "Checking" : "Unlock"}
                     </button>

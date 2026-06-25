@@ -6,7 +6,7 @@
 }
 body {
   overflow-x: hidden;
-  background-color: #F9F7EC;
+  background-color: #ffffff;
   width: 100%;
 }
 body::-webkit-scrollbar {
@@ -63,14 +63,14 @@ button {
   display: block;
 }
 
-.text-gray{
-  color: #7A7A7A
+.text-gray {
+  color: #7a7a7a;
 }
-.text-choc{
-  color: #713F1E
+.text-choc {
+  color: #713f1e;
 }
-.bg-choc{
-  background-color: #713F1E;
+.bg-choc {
+  background-color: #713f1e;
 }
 
 .highlight {
@@ -79,52 +79,69 @@ button {
   padding: 0 4px;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
-  background: #713F1E;
+  background: #713f1e;
 }
 
-
-
-
 :root {
-    --toastify-color-light: #fff;
-    --toastify-color-dark: #121212;
-    --toastify-color-info: #3498db;
-    --toastify-color-success: #07bc0c;
-    --toastify-color-warning: #f1c40f;
-    --toastify-color-error: #713F1E !important;
-    --toastify-color-transparent: rgba(255, 255, 255, 0.7);
-    --toastify-icon-color-info: var(--toastify-color-info);
-    --toastify-icon-color-success: var(--toastify-color-success);
-    --toastify-icon-color-warning: var(--toastify-color-warning);
-    --toastify-icon-color-error: var(--toastify-color-error);
-    --toastify-container-width: fit-content;
-    --toastify-toast-width: 320px;
-    --toastify-toast-offset: 16px;
-    --toastify-toast-top: max(var(--toastify-toast-offset), env(safe-area-inset-top));
-    --toastify-toast-right: max(var(--toastify-toast-offset), env(safe-area-inset-right));
-    --toastify-toast-left: max(var(--toastify-toast-offset), env(safe-area-inset-left));
-    --toastify-toast-bottom: max(var(--toastify-toast-offset), env(safe-area-inset-bottom));
-    --toastify-toast-background: #fff;
-    --toastify-toast-padding: 14px;
-    --toastify-toast-min-height: 64px;
-    --toastify-toast-max-height: 800px;
-    --toastify-toast-bd-radius: 6px;
-    --toastify-toast-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    --toastify-font-family: manjari-regular ,sans-serif;
-    --toastify-z-index: 9999;
-    --toastify-text-color-light: #757575;
-    --toastify-text-color-dark: #fff;
-    --toastify-text-color-info: #fff;
-    --toastify-text-color-success: #fff;
-    --toastify-text-color-warning: #fff;
-    --toastify-text-color-error: #fff;
-    --toastify-spinner-color: #616161;
-    --toastify-spinner-color-empty-area: #e0e0e0;
-    --toastify-color-progress-light: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #713F1E);
-    --toastify-color-progress-dark: #bb86fc;
-    --toastify-color-progress-info: var(--toastify-color-info);
-    --toastify-color-progress-success: var(--toastify-color-success);
-    --toastify-color-progress-warning: var(--toastify-color-warning);
-    --toastify-color-progress-error: var(--toastify-color-error);
-    --toastify-color-progress-bgo: 0.2;
+  --toastify-color-light: #fff;
+  --toastify-color-dark: #121212;
+  --toastify-color-info: #3498db;
+  --toastify-color-success: #07bc0c;
+  --toastify-color-warning: #f1c40f;
+  --toastify-color-error: #713f1e !important;
+  --toastify-color-transparent: rgba(255, 255, 255, 0.7);
+  --toastify-icon-color-info: var(--toastify-color-info);
+  --toastify-icon-color-success: var(--toastify-color-success);
+  --toastify-icon-color-warning: var(--toastify-color-warning);
+  --toastify-icon-color-error: var(--toastify-color-error);
+  --toastify-container-width: fit-content;
+  --toastify-toast-width: 320px;
+  --toastify-toast-offset: 16px;
+  --toastify-toast-top: max(
+    var(--toastify-toast-offset),
+    env(safe-area-inset-top)
+  );
+  --toastify-toast-right: max(
+    var(--toastify-toast-offset),
+    env(safe-area-inset-right)
+  );
+  --toastify-toast-left: max(
+    var(--toastify-toast-offset),
+    env(safe-area-inset-left)
+  );
+  --toastify-toast-bottom: max(
+    var(--toastify-toast-offset),
+    env(safe-area-inset-bottom)
+  );
+  --toastify-toast-background: #fff;
+  --toastify-toast-padding: 14px;
+  --toastify-toast-min-height: 64px;
+  --toastify-toast-max-height: 800px;
+  --toastify-toast-bd-radius: 6px;
+  --toastify-toast-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  --toastify-font-family: manjari-regular, sans-serif;
+  --toastify-z-index: 9999;
+  --toastify-text-color-light: #757575;
+  --toastify-text-color-dark: #fff;
+  --toastify-text-color-info: #fff;
+  --toastify-text-color-success: #fff;
+  --toastify-text-color-warning: #fff;
+  --toastify-text-color-error: #fff;
+  --toastify-spinner-color: #616161;
+  --toastify-spinner-color-empty-area: #e0e0e0;
+  --toastify-color-progress-light: linear-gradient(
+    to right,
+    #4cd964,
+    #5ac8fa,
+    #007aff,
+    #34aadc,
+    #5856d6,
+    #713f1e
+  );
+  --toastify-color-progress-dark: #bb86fc;
+  --toastify-color-progress-info: var(--toastify-color-info);
+  --toastify-color-progress-success: var(--toastify-color-success);
+  --toastify-color-progress-warning: var(--toastify-color-warning);
+  --toastify-color-progress-error: var(--toastify-color-error);
+  --toastify-color-progress-bgo: 0.2;
 }

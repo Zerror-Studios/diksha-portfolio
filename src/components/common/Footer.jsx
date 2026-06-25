@@ -65,12 +65,12 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className=" w-full h-fit space-y-24 md:space-y-0 md:items-center md:justify-between md:flex md:flex-row-reverse  font-semibold md:text-xl rounded-xl md:rounded-full md:px-8 p-5 text-choc bg-[#F9F7EC]">
+            <div className=" w-full h-fit space-y-24 md:space-y-0 md:items-center md:justify-between md:flex md:flex-row-reverse  font-semibold md:text-xl rounded-xl md:rounded-full md:px-8 p-5 text-choc bg-[#FFFFFF]">
               <div className="space-y-2">
                 <div className="flex gap-x-2 items-center">
                   <img src="/icons/mail_choc.svg" alt="img" />
                   <Link target='_blank'
-                  rel="noopener noreferrer"
+                    rel="noopener noreferrer"
                     href="mailto:dikshaghanshani97@gmail.com"
                     className="translate-y-0.5 hover:underline cursor-pointer"
                   >
@@ -85,7 +85,7 @@ const Footer = () => {
                   <Link aria-label="LinkedIn Profile" href={"https://www.linkedin.com/in/dikshaghanshani/"} rel="noopener noreferrer" target='_blank' className='size-12 border border-[#713F1E] hover:bg-[#713F1E] hover:text-[#E6DEC9]! transition-all duration-300 rounded-full center text-choc'>
                     <RiLinkedinLine size={22} />
                   </Link>
-                  <Link  aria-label="Behance Profile" href={"https://www.behance.net/dikshaghan7cec"} rel="noopener noreferrer" target='_blank' className='size-12 border border-[#713F1E] hover:bg-[#713F1E] hover:text-[#E6DEC9]! transition-all duration-300 rounded-full center text-choc'>
+                  <Link aria-label="Behance Profile" href={"https://www.behance.net/dikshaghan7cec"} rel="noopener noreferrer" target='_blank' className='size-12 border border-[#713F1E] hover:bg-[#713F1E] hover:text-[#E6DEC9]! transition-all duration-300 rounded-full center text-choc'>
                     <RiBehanceLine size={22} />
                   </Link>
                 </div>
