@@ -61,16 +61,16 @@ const ProjectDetail = ({ project }) => {
   };
 
   useEffect(() => {
-  const handleScroll = () => {
-    setShowTopBtn(window.scrollY >= window.innerHeight * 2);
-  };
+    const handleScroll = () => {
+      setShowTopBtn(window.scrollY >= window.innerHeight * 2);
+    };
 
-  handleScroll(); // initial check
+    handleScroll(); // initial check
 
-  window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -80,14 +80,11 @@ const ProjectDetail = ({ project }) => {
         window.scrollTo({
           top: 0,
           behavior: "smooth",
-        })
-      } className={`fixed opacity-0 bottom-5 backdrop-blur-xs left-1/2 gap-x-1 cursor-pointer  flex  items-center -translate-x-1/2 bg-choc text-sm uppercase hover:bg-transparent! border border-transparent hover:text-[#713F1E] hover:border-[#713F1E] text-white px-4 z-100 py-3 pb-2 rounded-lg transition-all duration-300 w-fit ${
-      showTopBtn
-        ? "opacity-100 translate-y-0 pointer-events-auto"
-        : "opacity-0 translate-y-4 pointer-events-none"
-    }`}>
-        Go to Top <RiArrowUpLine size={16} className="-translate-y-0.5" />
+        })}
+        className={` fixed z-100 right-5 bottom-5 shrink-0 size-8 md:size-10 border-[#713F1E] text-choc center backdrop-blur-xs rounded-full border transition-all duration-300 group hover:bg-[#713F1E] hover:text-white! hover:border-[#713F1E]"    `}  >
+        <RiArrowUpLine size={18} />
       </button>
+
 
 
       <div className={`w-full bg-white`}>
