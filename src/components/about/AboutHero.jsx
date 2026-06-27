@@ -29,7 +29,7 @@ const AboutHero = () => {
             }
         })
         tl.to(".abt_hero_bg", {
-            backgroundColor: "#FFFFFF",
+            backgroundColor: "#F9F7EC",
         })
         tl.to(".abt_hero_bg_title", {
             color: "#713F1E",
@@ -88,14 +88,14 @@ const AboutHero = () => {
                 <div className=" diksha_img w-full h-[100svh]! fixed inset-0 z-[-1]">
                     <Image src="/images/aboutpage/diksha_pic.png" alt="img" fill className='object-cover' />
                 </div>
-                <div className=" abt_hero_bg w-full h-[100svh]! flex items-center text-center container justify-center bg-[#FFFFFF00]">
+                <div className=" abt_hero_bg w-full h-[100svh]! flex items-center text-center container justify-center bg-[#F9F7EC00]">
                     <h1 className=' abt_hero_bg_title heading_split font-semibold   z-10 text-white leading-none  text-4xl  md:text-7xl' >Hello, I am <br /> Diksha Ghanshani</h1>
                 </div>
-                <div className=" padding abt_hero_bg abt_desc_sec  w-full h-[50vh] center text-center bg-[#FFFFFF00] ">
+                <div className=" padding abt_hero_bg abt_desc_sec  w-full h-[50vh] center text-center bg-[#F9F7EC00] ">
                     <p className='font-semibold text-choc leading-none md:w-[65%] text-3xl  '>From observing customer behavior in a family-run stationery shop to designing healthcare solutions and large-scale product experiences, the journey has always been driven by one belief —  <span className='highlight'>meaningful design begins with understanding people.</span></p>
                 </div>
             </div>
-            <div className=" clip_paren w-full h-screen! relative overflow-hidden bg-[#FFFFFF]">
+            <div className=" clip_paren w-full h-screen! relative overflow-hidden bg-[#F9F7EC]">
                 <div className="w-full  absolute z-10">
                     <img src="/images/aboutpage/abt_clip.svg" className='w-full ' alt="img" />
                 </div>

@@ -31,7 +31,7 @@ const Clients = () => {
                 <div className="size-3 absolute -bottom-1.5 -left-1.5 z-99 bg-choc"></div>
                 <div className="size-3 absolute -top-1.5 -right-1.5 z-99 bg-choc"></div>
                 <div className="size-3 absolute -bottom-1.5 -right-1.5 z-99 bg-choc"></div>
-                <Marquee gradient gradientColor='#FFFFFF' gradientWidth={100} className='h-full'>
+                <Marquee gradient gradientColor='#F9F7EC' gradientWidth={100} className='h-full'>
                     {marquee.map((item, index) => (
                         <img key={index} src={item} className=' mr-10 max-sm:w-32 md:mr-20' alt="img" />
                     ))}

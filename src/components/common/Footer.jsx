@@ -65,7 +65,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className=" w-full h-fit space-y-24 md:space-y-0 md:items-center md:justify-between md:flex md:flex-row-reverse  font-semibold md:text-xl rounded-xl md:rounded-full md:px-8 p-5 text-choc bg-[#FFFFFF]">
+            <div className=" w-full h-fit space-y-24 md:space-y-0 md:items-center md:justify-between md:flex md:flex-row-reverse  font-semibold md:text-xl rounded-xl md:rounded-full md:px-8 p-5 text-choc bg-[#F9F7EC]">
               <div className="space-y-2">
                 <div className="flex gap-x-2 items-center">
                   <img src="/icons/mail_choc.svg" alt="img" />

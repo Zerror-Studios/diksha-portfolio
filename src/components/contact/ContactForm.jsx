@@ -69,7 +69,7 @@ const ContactForm = () => {
             <div className=" ctct_form opacity-0 w-full container mt-12 md:mt-24 p-5 md:p-10">
                 <div className=" w-full grid-cols-1 md:grid-cols-3 grid bg-[#713F1E] rounded-2xl p-5 md:p-10">
                     <div className=" w-full col-span-1 pr-0 md:pr-12">
-                        <div className=" w-full h-fit space-y-24  font-semibold md:text-xl rounded-xl p-5 text-choc bg-[#FFFFFF]">
+                        <div className=" w-full h-fit space-y-24  font-semibold md:text-xl rounded-xl p-5 text-choc bg-[#F9F7EC]">
                             <div className="space-y-2">
                                 <div className="flex gap-x-2 items-center">
                                     <img src="/icons/mail_choc.svg" alt="img" />
@@ -124,7 +124,7 @@ const ContactForm = () => {
                             </div>
                             <textarea placeholder='A Brief About Your Project...' rows={5} className=' text-xl resize-none  font-semibold pt-4 pb-1 border-b border-white/10 w-full outline-none' name="message" value={formData.message} onChange={handleChange} required />
                         </div>
-                        <button type="submit" disabled={isSubmitting} className='bg-[#FFFFFF] text-choc font-semibold text-sm uppercase hover:bg-transparent! border border-transparent hover:text-[#FFFFFF]! hover:border-[#FFFFFF] px-6 py-3 pb-1.5 rounded-lg transition-all duration-300 w-fit block disabled:pointer-events-none disabled:opacity-60'>
+                        <button type="submit" disabled={isSubmitting} className='bg-[#F9F7EC] text-choc font-semibold text-sm uppercase hover:bg-transparent! border border-transparent hover:text-[#F9F7EC]! hover:border-[#F9F7EC] px-6 py-3 pb-1.5 rounded-lg transition-all duration-300 w-fit block disabled:pointer-events-none disabled:opacity-60'>
                             <p>{isSubmitting ? 'Submitting...' : 'Submit'}</p>
                         </button>
                     </form>

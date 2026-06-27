@@ -1,8 +1,8 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { RiArrowLeftLine, RiArrowRightLine } from "@remixicon/react";
+import { RiArrowLeftLine, RiArrowRightLine, RiArrowUpLine } from "@remixicon/react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
@@ -12,7 +12,7 @@ const ProjectDetail = ({ project }) => {
   const carouselAspectClasses = {
     square: "aspect-square w-[85vw]! md:w-[40vw]!",
     portrait: "aspect-[3/4] w-[85vw]! md:w-[30vw]!",
-    landscape: "aspect-video w-[85vw]! md:w-[70vw]!",
+    landscape: "aspect-auto h-[35vh]! w-auto!  md:h-screen!",
   };
 
   const [isBeginning, setIsBeginning] = useState(true);
@@ -21,7 +21,9 @@ const ProjectDetail = ({ project }) => {
   const [password, setPassword] = useState("");
   const [isUnlocked, setIsUnlocked] = useState(!project.hasMoreLockedSlides);
   const [isUnlocking, setIsUnlocking] = useState(false);
-  const swiperRef = useRef(null);
+  const swiperRefs = useRef({});
+  const [swiperState, setSwiperState] = useState({});
+  const [showTopBtn, setShowTopBtn] = useState(false);
 
   const handleUnlockProject = async (event) => {
     event.preventDefault();
@@ -58,11 +60,37 @@ const ProjectDetail = ({ project }) => {
     }
   };
 
+  useEffect(() => {
+  const handleScroll = () => {
+    setShowTopBtn(window.scrollY >= window.innerHeight * 2);
+  };
+
+  handleScroll(); // initial check
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
   return (
     <>
       <ToastContainer position="top-right" autoClose={3000} />
 
-      <div className={`w-full`}>
+      <button onClick={() =>
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        })
+      } className={`fixed opacity-0 bottom-5 backdrop-blur-xs left-1/2 gap-x-1 cursor-pointer  flex  items-center -translate-x-1/2 bg-choc text-sm uppercase hover:bg-transparent! border border-transparent hover:text-[#713F1E] hover:border-[#713F1E] text-white px-4 z-100 py-3 pb-2 rounded-lg transition-all duration-300 w-fit ${
+      showTopBtn
+        ? "opacity-100 translate-y-0 pointer-events-auto"
+        : "opacity-0 translate-y-4 pointer-events-none"
+    }`}>
+        Go to Top <RiArrowUpLine size={16} className="-translate-y-0.5" />
+      </button>
+
+
+      <div className={`w-full bg-white`}>
         <div className="padding py-12 pt-32  md:py-24 md:pt-44 grid md:grid-cols-2 gap-y-12 gap-x-44">
           <div>
             <p className="text-sm text-choc font-semibold">
@@ -97,7 +125,7 @@ const ProjectDetail = ({ project }) => {
                 </h4>
               </div>
 
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1">
                 {project.categories?.map((tag, i) => (
                   <div
                     key={i}
@@ -113,7 +141,7 @@ const ProjectDetail = ({ project }) => {
           </div>
         </div>
 
-        <div className="w-full min-h-screen">
+        <div className="w-full">
 
           {slides.map((slide) => {
 
@@ -156,82 +184,90 @@ const ProjectDetail = ({ project }) => {
 
             // CAROUSEL
             if (slide._type === "slideCarousel") {
-              const aspectClass = carouselAspectClasses[slide.aspectSize] || carouselAspectClasses.square;
+              const aspectClass =
+                carouselAspectClasses[slide.aspectSize] ||
+                carouselAspectClasses.square;
+
+              const state = swiperState[slide._key] || {
+                isBeginning: true,
+                isEnd: false,
+              };
 
               return (
-                <div
-                  key={slide._key}
-                  className="w-full py-6 md:py-12 space-y-2 md:space-y-5"
-                >
+                <div key={slide._key} className="w-full py-2 md:py-5 relative">
 
-                  <div className=" padding   w-full max-sm:px-4 grid grid-cols-6 items-end">
-                    <div className="col-span-5">
-                      {/* <h2 className=' text-3xl   leading-none text-choc font-semibold '>Built in Motion.</h2> */}
-                    </div>
-                    <div className="col-span-1  shrink-0 pb-3 flex justify-end gap-x-1 md:gap-x-2 ">
-                      <button
-                        aria-label="Previous slide"
-                        disabled={isBeginning}
-                        onClick={() => swiperRef.current?.slidePrev()}
-                        className={`prev_button shrink-0 size-8 md:size-10 border-[#713F1E30] text-choc center rounded-full border transition-all duration-300
-                                            ${isBeginning
-                            ? "opacity-40 cursor-not-allowed!"
-                            : "group hover:bg-[#713F1E] hover:text-white! hover:border-[#713F1E]"
-                          }`}
-                      >
-                        <RiArrowLeftLine size={18} />
-                      </button>
+                  <div className="px-5 absolute inset-x-0 top-1/2 -translate-y-1/2 z-20 flex justify-between pointer-events-none">
 
-                      <button
-                        aria-label="Next slide"
-                        disabled={isEnd}
-                        onClick={() => swiperRef.current?.slideNext()}
-                        className={`next_button shrink-0 size-8 md:size-10 border-[#713F1E30] text-choc center rounded-full border transition-all duration-300
-                                                ${isEnd
-                            ? "opacity-40 cursor-not-allowed!"
-                            : "group hover:bg-[#713F1E] hover:text-white! hover:border-[#713F1E]"
-                          }`}
-                      >
-                        <RiArrowRightLine size={18} />
-                      </button>
-                    </div>
-                  </div>
-
-
-                  <div className="">
-                    <Swiper
-                      onSwiper={(swiper) => {
-                        swiperRef.current = swiper;
-                        setIsBeginning(swiper.isBeginning);
-                        setIsEnd(swiper.isEnd);
-                      }}
-                      onSlideChange={(swiper) => {
-                        setIsBeginning(swiper.isBeginning);
-                        setIsEnd(swiper.isEnd);
-                      }}
-                      spaceBetween={30}
-                      slidesPerView={"auto"}
-                      grabCursor
-                      className="cursor-grab active:cursor-grabbing"
-                      breakpoints={{
-                        0: { spaceBetween: 10 },
-                        640: { spaceBetween: 20 },
-                      }}
+                    <button
+                      aria-label="Previous slide"
+                      disabled={state.isBeginning}
+                      onClick={() => swiperRefs.current[slide._key]?.slidePrev()}
+                      className={`pointer-events-auto prev_button shrink-0 size-8 md:size-10 border-[#713F1E] text-choc center backdrop-blur-xs rounded-full border transition-all duration-300
+            ${state.isBeginning
+                          ? "opacity-40 cursor-not-allowed!"
+                          : "group hover:bg-[#713F1E] hover:text-white! hover:border-[#713F1E]"
+                        }`}
                     >
-                      {slide.images?.map((img, idx) => (
-                        <SwiperSlide
-                          key={idx}
-                          className={` first:ml-4 last:mr-4 md:first:ml-24 md:last:mr-24 rounded-lg md:rounded-2xl relative  overflow-hidden  ${aspectClass} shrink-0`}
-                        >
-                          <img
-                            src={img.asset?.url}
-                            alt="loading"
-                            className="cover "
-                          />
-                        </SwiperSlide>
-                      ))}
-                    </Swiper>
+                      <RiArrowLeftLine size={18} />
+                    </button>
+
+                    <button
+                      aria-label="Next slide"
+                      disabled={state.isEnd}
+                      onClick={() => swiperRefs.current[slide._key]?.slideNext()}
+                      className={`pointer-events-auto next_button shrink-0 size-8 md:size-10 border-[#713F1E] text-choc center backdrop-blur-xs rounded-full border transition-all duration-300
+            ${state.isEnd
+                          ? "opacity-40 cursor-not-allowed!"
+                          : "group hover:bg-[#713F1E] hover:text-white! hover:border-[#713F1E]"
+                        }`}
+                    >
+                      <RiArrowRightLine size={18} />
+                    </button>
                   </div>
+
+                  <Swiper
+                    slidesPerView="auto"
+                    spaceBetween={30}
+                    grabCursor
+                    className="cursor-grab active:cursor-grabbing"
+                    breakpoints={{
+                      0: { spaceBetween: 8 },
+                      640: { spaceBetween: 20 },
+                    }}
+                    onSwiper={(swiper) => {
+                      swiperRefs.current[slide._key] = swiper;
+
+                      setSwiperState((prev) => ({
+                        ...prev,
+                        [slide._key]: {
+                          isBeginning: swiper.isBeginning,
+                          isEnd: swiper.isEnd,
+                        },
+                      }));
+                    }}
+                    onSlideChange={(swiper) => {
+                      setSwiperState((prev) => ({
+                        ...prev,
+                        [slide._key]: {
+                          isBeginning: swiper.isBeginning,
+                          isEnd: swiper.isEnd,
+                        },
+                      }));
+                    }}
+                  >
+                    {slide.images?.map((img, idx) => (
+                      <SwiperSlide
+                        key={idx}
+                        className={` first:ml-2 last:mr-2 md:first:ml-5 md:last:mr-5 shrink-0 relative overflow-hidden ${aspectClass}`}
+                      >
+                        <img
+                          src={img.asset?.url}
+                          alt=""
+                          className="h-full"
+                        />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
                 </div>
               );
             }
