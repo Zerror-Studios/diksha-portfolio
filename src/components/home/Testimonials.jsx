@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 export const testimonials = [
     {
-        id: "01/08",
+        id: "01/09",
         text:
             "Diksha has been an outstanding partner to the IDX Document Management team, especially on critical, long-running initiatives such as the top-priority QB AP Automation project. She brings a rare combination of strong UX judgment, thoughtful execution, and deep engineering partnership.",
         name: "Shaibal Mandal",
@@ -16,7 +16,7 @@ export const testimonials = [
     },
 
     {
-        id: "02/08",
+        id: "02/09",
         text:
             "Diksha has done a great job driving the IDX experience in the bills context. Her Figmas are always super organized and easy to navigate. Every flow feels well thought through and she truly cares about getting the details right.",
         name: "Austin Sanchez",
@@ -25,7 +25,7 @@ export const testimonials = [
     },
 
     {
-        id: "03/08",
+        id: "03/09",
         text:
             "Every design concept that Diksha works on includes thoughtful consideration and deep understanding of the challenge. Her research-first approach and focus on usability make collaboration enjoyable and impactful.",
         name: "Ainatte Inbal",
@@ -34,7 +34,7 @@ export const testimonials = [
     },
 
     {
-        id: "04/08",
+        id: "04/09",
         text:
             "Diksha consistently demonstrates ownership and exceptional diligence. She proactively aligns stakeholders, drives customer empathy sessions, and maintains strong communication across teams.",
         name: "Apoorva Gopal Jha",
@@ -43,7 +43,7 @@ export const testimonials = [
     },
 
     {
-        id: "05/08",
+        id: "05/09",
         text:
             "Working with Diksha has been an amazing experience. She simplified complex flows, identified gaps quickly, and delivered highly detailed and impactful case studies.",
         name: "Sourodeep Chatterjee",
@@ -52,16 +52,25 @@ export const testimonials = [
     },
 
     {
-        id: "06/08",
+        id: "06/09",
         text:
             "Diksha does a great job conducting user research and ideating design. Her passion shows in her work and she communicates progress and ideas clearly.",
         name: "Minji Kang",
         role: "Senior Product Designer",
+        image: "/images/testimonial/Minji/1634252218768.jpeg",
+    },
+
+    {
+        id: "07/09",
+        text:
+            "It has been a pleasure to work with Diksha. She is extremely driven, detail-oriented, excited to learn, and open to feedback and consistently seeks it out. Her work is evidence of her passion for getting moving and making progress on customer insights, iterating on designs, and sharing her learnings with the team.",
+        name: "Christine Kiely",
+        role: "Senior design researcher",
         image: "/images/testimonial/Christine/1652386647078.jpeg",
     },
 
     {
-        id: "07/08",
+        id: "08/09",
         text:
             "Diksha consistently prioritizes user needs in her work. Her dedication to research uncovers insights that lead to intuitive solutions and stronger collaboration.",
         name: "Juhi",
@@ -70,7 +79,7 @@ export const testimonials = [
     },
 
     {
-        id: "08/08",
+        id: "09/09",
         text:
             "Diksha takes ownership and is highly resourceful in overcoming blockers. Her research and insight gathering helped the team prioritize meaningful product challenges.",
         name: "Gautham Muthukumar",
