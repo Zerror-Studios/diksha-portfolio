@@ -6,48 +6,61 @@ import Image from 'next/image';
 import React, { useRef } from 'react'
 gsap.registerPlugin(ScrollTrigger)
 
+const images = [
+    "/images/aboutpage/creative_images/img1.webp",
+    "/images/aboutpage/creative_images/img2.webp",
+    "/images/aboutpage/creative_images/img3.webp",
+    "/images/aboutpage/creative_images/img4.webp",
+    "/images/aboutpage/creative_images/img5.webp",
+    "/images/aboutpage/creative_images/img6.webp",
+    "/images/aboutpage/creative_images/img7.webp",
+]
+
 const CreativeExploration = () => {
 
     const containerRef = useRef(null);
+    const sliderRef = useRef(null);
 
     useGSAP(() => {
-        gsap.from(".child_img", {
-            y: 100,
-            opacity: 0,
-            ease: "expo.out",
-            scrollTrigger: {
-                trigger: ".child_img",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
-            }
-        })
-        gsap.fromTo(".crd", {
-            y: 200
-        }, {
-            y: -200,
+        const container = containerRef.current;
+        const slider = sliderRef.current;
+
+        const totalWidth = slider.scrollWidth;
+        const visibleWidth = container.offsetWidth;
+
+        const moveX = totalWidth - visibleWidth;
+
+        gsap.to(slider, {
+            x: -moveX,
             ease: "none",
             scrollTrigger: {
                 trigger: containerRef.current,
-                start: "top bottom",
-                end: "bottom top",
+                start: "top top",
+                end: `bottom bottom`,
                 scrub: true,
-            }
-        })
-    })
+                invalidateOnRefresh: true,
+            },
+        });
+    }, { scope: containerRef });
 
     return (
         <>
-            <div ref={containerRef} className="  container py-12 md:py-24 w-full ">
-                <h2 className='text-choc text-3xl   leading-none font-semibold '>A journey of passion, <br /> purpose, and  creative <br /> exploration</h2>
-                <div className="relative h-[50vh]  mt-20 w-full center">
-                    <div className=" w-full relative rounded-full aspect-15/9 overflow-hidden md:w-1/2">
-                        <Image fill src="/images/aboutpage/oval_img.png" className='cover ' alt="img" />
+            <div ref={containerRef} className=" h-[400vh]!  w-full ">
+                <div className=" py-12 md:py-24 w-full sticky flex flex-col justify-between top-0 h-screen">
+                    <h2 className=' padding text-choc text-3xl   leading-none font-semibold '>A journey of passion, <br /> purpose, and  creative <br /> exploration</h2>
+                    <div ref={sliderRef} className="  flex  gap-x-5">
+                        {images.map((item, i) => (
+                            <div key={i} className="  first:pl-4 lg:first:pl-8 xl:first:pl-24 last:pr-4 lg:last:pr-8 xl:last:pr-24">
+                                <div className="relative aspect-square shrink-0 rounded-xl overflow-hidden h-[60vh]">
+                                    <Image fill src={item} className='cover' alt="creative Exploration img" />
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                    <img src="/images/aboutpage/diksha_child.png" className=' child_img absolute z-[-1] md:translate-x-50 -top-20 md:-top-[60%] w-1/2 md:w-[25vw]' alt="img" />
-                    <img src="/images/aboutpage/creative_card.png" className=' crd absolute z-[10] left-0 md:left-32 bottom-32 md:-bottom-24 w-1/2 md:w-[25vw]' alt="img" />
                 </div>
-
-                <div className="w-full bg-choc md:items-stretch md:flex gap-x-20 text-white md:mt-44 p-8 md:p-10 rounded-xl">
+            </div>
+            <div className="padding pb-12 md:pb-24">
+                <div className="w-full bg-choc md:items-stretch md:flex gap-x-20 text-white  p-8 md:p-10 rounded-xl">
                     <div className=" w-full md:w-[30%]">
                         <p className='text-3xl  '>Where it all started</p>
                         <p className=' text-xl mt-4 leading-tight'>I come from a lineage of builders, sellers, and problem-solvers.</p>
