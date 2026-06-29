@@ -118,6 +118,13 @@ export default defineType({
           title: 'Add image',
           type: 'image',
           options: { hotspot: true },
+          fields: [
+            defineField({
+              name: 'liveLink',
+              title: 'Live Link',
+              type: 'url',
+            }),
+          ],
         },
         {
           name: 'slideVideo',

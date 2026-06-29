@@ -144,16 +144,29 @@ const ProjectDetail = ({ project }) => {
 
             // IMAGE
             if (slide._type === "slideImage") {
+              const imageElement = (
+                <img
+                  src={slide.asset?.url}
+                  alt={slide.alt || ""}
+                  className={`w-full h-auto object-cover ${slide.liveLink
+                      ? "transition-transform duration-300 ease-in-out hover:scale-95 origin-center cursor-pointer"
+                      : ""
+                    }`}
+                />
+              );
+
               return (
                 <div
                   key={slide._key}
-                  className="w-full"
+                  className="w-full overflow-hidden"
                 >
-                  <img
-                    src={slide.asset?.url}
-                    alt={slide.alt}
-                    className="w-full h-auto object-cover"
-                  />
+                  {slide.liveLink ? (
+                    <a href={slide.liveLink} target="_blank" rel="noopener noreferrer" className="block w-full">
+                      {imageElement}
+                    </a>
+                  ) : (
+                    imageElement
+                  )}
                 </div>
               );
             }

@@ -4,7 +4,8 @@ const PROJECT_SLIDES_PROJECTION = groq`slides[]{
   _type,
   _key,
   _type == "slideImage" => {
-    asset->
+    asset->,
+    liveLink
   },
   _type == "slideVideo" => {
     asset->
