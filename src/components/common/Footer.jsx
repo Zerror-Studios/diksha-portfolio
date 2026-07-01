@@ -20,10 +20,6 @@ const footerLinks = [
     label: "contact",
     href: "/contact"
   },
-  {
-    label: "resume",
-    href: ""
-  },
 ]
 
 const Footer = () => {
@@ -62,6 +58,15 @@ const Footer = () => {
                       </Link>
                     )
                   })}
+
+                  <Link target='_blank' href={"/pdf/DIKSHA_GHANSHANI_RESUME.pdf"} className='group relative' >Resume  <span
+                    className={`
+                        navLinkBar
+                      bg-white
+              absolute left-0 bottom-1 h-[1.5px] rounded-full w-full
+              transition-transform duration-300 ease-out scale-x-0 origin-left group-hover:scale-x-100
+            `}
+                  ></span></Link>
                 </div>
               </div>
             </div>

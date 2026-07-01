@@ -272,7 +272,7 @@ const ProjectDetail = ({ project }) => {
                       >
                         <img
                           src={img.asset?.url}
-                          alt=""
+                          alt="img"
                           className="h-full"
                         />
                       </SwiperSlide>

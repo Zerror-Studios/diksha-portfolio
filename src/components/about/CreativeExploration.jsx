@@ -52,7 +52,7 @@ const CreativeExploration = () => {
                         {images.map((item, i) => (
                             <div key={i} className=" relative first:pl-4 lg:first:pl-8 xl:first:pl-24 last:pr-4 lg:last:pr-8 xl:last:pr-24">
                                 {i===0 &&(
-                                    <img className='absolute -bottom-10 left-10 z-10 w-64' src="/images/aboutpage/creative_card.png" alt="" />
+                                    <img className='absolute -bottom-10 left-10 z-10 w-64' src="/images/aboutpage/creative_card.png" alt="creative img" />
                                 )}
                                 <div className="relative aspect-square shrink-0 rounded-xl overflow-hidden h-[60vh]">
                                     <Image fill src={item} className='cover' alt="creative Exploration img" />
